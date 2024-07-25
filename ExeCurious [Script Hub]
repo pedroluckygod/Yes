@@ -1,0 +1,399 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "ExeCurious - Script Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+OrionLib:MakeNotification({
+	Name = "Welcome To ExeCurious Hub",
+	Content = "Loaded With Sucess!",
+	Image = "rbxassetid://3342499434",
+	Time = 5
+})
+
+--[[
+Title = <string> - The title of the notification.
+Content = <string> - The content of the notification.
+Image = <string> - The icon of the notification.
+Time = <number> - The duration of the notfication.
+]]
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = " Script Section"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+local Tab = Window:MakeTab({
+	Name = "[OP] H4x Scripts !",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Section Bro"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Skybox",
+	Callback = function()
+      		 game.Lighting:ClearAllChildren()
+wait(0.3)
+  
+  local newSkyboxId = "rbxassetid://18512422227"
+local skyboxProps = {"SkyboxBk", "SkyboxDn", "SkyboxFt", "SkyboxLf", "SkyboxRt", "SkyboxUp"}
+
+local sky = game.Lighting:FindFirstChildOfClass("Sky") or Instance.new("Sky", game.Lighting)
+for _, prop in ipairs(skyboxProps) do sky[prop] = newSkyboxId 
+  
+end
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Decal Spam",
+	Callback = function()
+      		  local ID =16028135551
+function spamDecal(v)
+    if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..Id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+function decalspam(id) --use this function, not the one on top
+    Id = id
+    for i,v in pairs(game.Workspace:GetChildren()) do
+        if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+end
+ 
+decalspam(ID)
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Particles 1",
+	Callback = function()
+local playerLeaderstats = {}
+for i, v in pairs(game.Players:GetChildren()) do
+table.insert(playerLeaderstats, v)
+end
+for i, v in pairs(playerLeaderstats) do
+pe = Instance.new("ParticleEmitter",v.Character.Head)
+pe.Texture = "rbxassetid://18512422227"
+pe.VelocitySpread = 90
+end
+	end
+})
+
+
+
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+
+Tab:AddButton({
+	Name = "k00p decal [1]",
+	Callback = function()
+      		  local ID =9422866248
+function spamDecal(v)
+    if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..Id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+function decalspam(id) --use this function, not the one on top
+    Id = id
+    for i,v in pairs(game.Workspace:GetChildren()) do
+        if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+end
+ 
+decalspam(ID)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "k00p Decal [2]!",
+	Callback = function()
+      		  local ID =11426185601
+function spamDecal(v)
+    if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..Id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+function decalspam(id) --use this function, not the one on top
+    Id = id
+    for i,v in pairs(game.Workspace:GetChildren()) do
+        if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+end
+ 
+decalspam(ID)
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Particles 2",
+	Callback = function()
+      		local playerLeaderstats = {}
+for i, v in pairs(game.Players:GetChildren()) do
+table.insert(playerLeaderstats, v)
+end
+for i, v in pairs(playerLeaderstats) do
+pe = Instance.new("ParticleEmitter",v.Character.Torso)
+pe.Texture = "http://www.roblox.com/asset/?id=127476787"
+pe.VelocitySpread = 200
+  	end    
+	end
+})
+
+Tab:AddButton({
+	Name = "Old Meme Particles",
+	Callback = function()
+      		local playerLeaderstats = {}
+for i, v in pairs(game.Players:GetChildren()) do
+table.insert(playerLeaderstats, v)
+end
+for i, v in pairs(playerLeaderstats) do
+pe = Instance.new("ParticleEmitter",v.Character.Torso)
+pe.Texture = "rbxassetid://8979672"
+pe.VelocitySpread = 50
+se = Instance.new("ParticleEmitter",v.Character.Torso)
+se.Texture = "rbxassetid://176067516"
+se.VelocitySpread = 50
+fe = Instance.new("ParticleEmitter",v.Character.Torso)
+fe.Texture = "rbxassetid://179012130"
+fe.VelocitySpread = 50
+end
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+
+
+Tab:AddButton({
+	Name = "k00p skybox [1]",
+	Callback = function()
+      		 game.Lighting:ClearAllChildren()
+wait(0.3)
+  
+  local newSkyboxId = "rbxassetid://9422866248"
+local skyboxProps = {"SkyboxBk", "SkyboxDn", "SkyboxFt", "SkyboxLf", "SkyboxRt", "SkyboxUp"}
+
+local sky = game.Lighting:FindFirstChildOfClass("Sky") or Instance.new("Sky", game.Lighting)
+for _, prop in ipairs(skyboxProps) do sky[prop] = newSkyboxId 
+  
+end
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "k00p skybox [2]",
+	Callback = function()
+      		 game.Lighting:ClearAllChildren()
+wait(0.3)
+  
+  local newSkyboxId = "rbxassetid://11426185601"
+local skyboxProps = {"SkyboxBk", "SkyboxDn", "SkyboxFt", "SkyboxLf", "SkyboxRt", "SkyboxUp"}
+
+local sky = game.Lighting:FindFirstChildOfClass("Sky") or Instance.new("Sky", game.Lighting)
+for _, prop in ipairs(skyboxProps) do sky[prop] = newSkyboxId 
+  
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "k00p Particles [1]",
+	Callback = function()
+      		local playerLeaderstats = {}
+for i, v in pairs(game.Players:GetChildren()) do
+table.insert(playerLeaderstats, v)
+end
+for i, v in pairs(playerLeaderstats) do
+pe = Instance.new("ParticleEmitter",v.Character.Head)
+pe.Texture = "rbxassetid://9698929683"
+pe.VelocitySpread = 90
+  	end    
+	end
+})
+
+Tab:AddButton({
+	Name = "k00p Particles [2]",
+	Callback = function()
+      		local playerLeaderstats = {}
+for i, v in pairs(game.Players:GetChildren()) do
+table.insert(playerLeaderstats, v)
+end
+for i, v in pairs(playerLeaderstats) do
+pe = Instance.new("ParticleEmitter",v.Character.Head)
+pe.Texture = "rbxassetid://11426291165"
+pe.VelocitySpread = 90
+  	end
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+ -- [------]   Separate   [-----] --
+
+
+local Tab = Window:MakeTab({
+	Name = "Not4Guis",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Not4gui Section"
+})
+
+Tab:AddButton({
+	Name = "Not4Gui V7.1",
+	Callback = function()
+      	
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+OrionLib:Init()
