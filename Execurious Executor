@@ -1,7 +1,19 @@
+cmdtext = 
+"getcmd -- get commands in box",
+"cmd -- Print Commands",
+"_G.IY -- Infinite Yield",
+"_G.NA() -- Nameless Admin",
+"_G.ND() -- Natural Disater",
+"_G.PL() -- Prison Life"
+
+ a = "_G.IY -- Infinite Yield"
+ b = "_G.NA() -- Nameless Admin"
+ c = "_G.ND() -- Natural Disater"
+ d = "_G.PL() -- Prison Life"
+
 
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "ExampleGui"
-screenGui.ResetOnSpawn = false
+screenGui.Name = "The gui"
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 
@@ -18,31 +30,30 @@ local textLabel = Instance.new("TextLabel")
 textLabel.Size = UDim2.new(0.2, 0, 0.2, 0)
 textLabel.Position = UDim2.new(0, 10, 0, 10)
 textLabel.BackgroundTransparency = 1
-textLabel.Text = "ExeCurious [FE] By @NotaPlayer214"
+textLabel.Text = "ExeCurious [FE]"
 textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 textLabel.Parent = frame
 
--- Criação do TextBox
+
 local textBox = Instance.new("TextBox")
 textBox.Size = UDim2.new(0.9, 0, 0.3, 0)
 textBox.Position = UDim2.new(0.05, 0, 0.3, 0)
 textBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 textBox.Text = ""
-textBox.ClearTextOnFocus = false
-textBox.PlaceholderText = "" 
+textBox.PlaceholderText = "" -- Atualizado de "PlaceHolderText" para "PlaceholderText"
 textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 textBox.Parent = frame
 
- TextButton
+
 local textButton1 = Instance.new("TextButton")
 textButton1.Size = UDim2.new(0.2, -5, 0.1, 0)
 textButton1.Position = UDim2.new(0.05, 0, 0.7, 0)
 textButton1.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-textButton1.Text = "Execute"
+Text = "Execute"
 textButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
 textButton1.Parent = frame
 
- TextButton
+
 local textButton2 = Instance.new("TextButton")
 textButton2.Size = UDim2.new(0.2, -5, 0.1, 0)
 textButton2.Position = UDim2.new(0.3, 0, 0.7, 0)
@@ -51,7 +62,7 @@ textButton2.Text = "Clear"
 textButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
 textButton2.Parent = frame
 
- TextButton
+
 local textButton3 = Instance.new("TextButton")
 textButton3.Size = UDim2.new(0.2, -5, 0.1, 0)
 textButton3.Position = UDim2.new(0.55, 0, 0.7, 0)
@@ -60,7 +71,7 @@ textButton3.Text = "Attach"
 textButton3.TextColor3 = Color3.fromRGB(255, 255, 255)
 textButton3.Parent = frame
 
- TextButton
+
 local textButton4 = Instance.new("TextButton")
 textButton4.Size = UDim2.new(0.2, -5, 0.1, 0)
 textButton4.Position = UDim2.new(0.8, 0, 0.7, 0)
@@ -69,14 +80,14 @@ textButton4.Text = "Hub"
 textButton4.TextColor3 = Color3.fromRGB(255, 255, 255)
 textButton4.Parent = frame
 
-
+-- Funções dos Botões
 textButton1.MouseButton1Down:Connect(function()
     local code = textBox.Text
-    loadstring(code)() -- Executa o código do TextBox
+    loadstring(code)() 
 end)
 
 textButton2.MouseButton1Down:Connect(function()
-    textBox.Text = ""
+    textBox.Text = "" 
 end)
 
 textButton3.MouseButton1Click:Connect(function()
@@ -132,3 +143,61 @@ local function makeDraggable(gui)
 end
 
 makeDraggable(frame)
+
+-- cool shortcuts
+
+function shcIY()
+  if textBox.Text == "_G.IY()" then
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+  end
+end
+
+function shcNA()
+  if textBox.Text == "_G.NA()" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))()
+  end
+end
+
+function shcPL()
+  if textbox.Text == "_G.PL()" then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua'))()
+  end
+end
+
+function shcNT()
+  if textBox.Text == "_G.ND()" then
+    loadstring(game:HttpGet("https://gist.githubusercontent.com/JerrymiahPM/612709e4367a3b6b03561ae6affe9f43/raw/8786f4a3e0253835218eec456479c2cdf6741fb2/nds.lua"))()
+  end
+end
+
+function commands()
+  if textBox.Text == "cmd" then
+ print(a)
+ print(b)
+ print(c)
+ print(d)
+    
+  wait(2)
+    
+  game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Here it goes";
+        Text = "Check Console. say /console";
+        Duration = math.huge;
+        Button1 = "OK"
+  }) 
+end
+end
+
+function showcmd()
+  if textBox.Text == "getcmd" then
+  textBox.Text = cmdText
+  end
+end
+  
+  
+textButton1.MouseButton1Down:Connect(showcmd)
+textButton1.MouseButton1Down:Connect(commands)
+textButton1.MouseButton1Down:Connect(shcIY)
+textButton1.MouseButton1Down:Connect(shcNA)
+textButton1.MouseButton1Down:Connect(shcNT)
+textButton1.MouseButton1Down:Connect(shcPL)
