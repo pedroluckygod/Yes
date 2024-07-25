@@ -38,21 +38,28 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "rc7",
 	Callback = function()
-      		loadstring(game:HttpGet("https://github.com/FilteringEnabled/FE/blob/main/rc7"))()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/rc7"))()
   	end    
 })
 
 Tab:AddButton({
 	Name = "comet [idk what is]",
 	Callback = function()
-      		loadstring(game:HttpGet("https://github.com/FilteringEnabled/FE/blob/main/Comet"))()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/Comet"))()
   	end    
 })
 
 Tab:AddButton({
 	Name = "Kohls Admin",
 	Callback = function()
-      		loadstring(game:HttpGet("https://github.com/FilteringEnabled/FE/blob/main/KohlsAdminFE"))()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/KohlsAdminFE"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Infinite Yield [FD Edition]",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/Infinite%20Yield%20FD%20FE"))
   	end    
 })
 --[[
