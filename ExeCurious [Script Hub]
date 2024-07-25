@@ -376,7 +376,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Not4Gui V7.1",
 	Callback = function()
-      	
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/main/notaguiv7.txt"))()
   	end    
 })
 
