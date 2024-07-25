@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "ExeCurious v.1.1.0 - Script Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "ExeCurious - Script Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 OrionLib:MakeNotification({
 	Name = "Welcome To ExeCurious Hub",
@@ -28,6 +28,33 @@ local Section = Tab:AddSection({
 	Name = " Script Section"
 })
 
+Tab:AddButton({
+	Name = "cmd[Admin]",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/testing-main.lua"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "rc7",
+	Callback = function()
+      		loadstring(game:HttpGet("https://github.com/FilteringEnabled/FE/blob/main/rc7"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "comet [idk what is]",
+	Callback = function()
+      		loadstring(game:HttpGet("https://github.com/FilteringEnabled/FE/blob/main/Comet"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Kohls Admin",
+	Callback = function()
+      		loadstring(game:HttpGet("https://github.com/FilteringEnabled/FE/blob/main/KohlsAdminFE"))()
+  	end    
+})
 --[[
 Name = <string> - The name of the section.
 ]]
