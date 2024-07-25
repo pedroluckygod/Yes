@@ -1,0 +1,134 @@
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "ExampleGui"
+screenGui.ResetOnSpawn = false
+
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+frame.Position = UDim2.new(0.25, 0, 0.25, 0)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.Active = true
+frame.Draggable = true
+frame.Parent = screenGui
+
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(0.2, 0, 0.2, 0)
+textLabel.Position = UDim2.new(0, 10, 0, 10)
+textLabel.BackgroundTransparency = 1
+textLabel.Text = "ExeCurious [FE] By @NotaPlayer214"
+textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+textLabel.Parent = frame
+
+-- Criação do TextBox
+local textBox = Instance.new("TextBox")
+textBox.Size = UDim2.new(0.9, 0, 0.3, 0)
+textBox.Position = UDim2.new(0.05, 0, 0.3, 0)
+textBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+textBox.Text = ""
+textBox.PlaceholderText = "" 
+textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+textBox.Parent = frame
+
+ TextButton
+local textButton1 = Instance.new("TextButton")
+textButton1.Size = UDim2.new(0.2, -5, 0.1, 0)
+textButton1.Position = UDim2.new(0.05, 0, 0.7, 0)
+textButton1.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+textButton1.Text = "Execute"
+textButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
+textButton1.Parent = frame
+
+ TextButton
+local textButton2 = Instance.new("TextButton")
+textButton2.Size = UDim2.new(0.2, -5, 0.1, 0)
+textButton2.Position = UDim2.new(0.3, 0, 0.7, 0)
+textButton2.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+textButton2.Text = "Clear"
+textButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
+textButton2.Parent = frame
+
+ TextButton
+local textButton3 = Instance.new("TextButton")
+textButton3.Size = UDim2.new(0.2, -5, 0.1, 0)
+textButton3.Position = UDim2.new(0.55, 0, 0.7, 0)
+textButton3.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+textButton3.Text = "Attach"
+textButton3.TextColor3 = Color3.fromRGB(255, 255, 255)
+textButton3.Parent = frame
+
+ TextButton
+local textButton4 = Instance.new("TextButton")
+textButton4.Size = UDim2.new(0.2, -5, 0.1, 0)
+textButton4.Position = UDim2.new(0.8, 0, 0.7, 0)
+textButton4.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+textButton4.Text = "Hub"
+textButton4.TextColor3 = Color3.fromRGB(255, 255, 255)
+textButton4.Parent = frame
+
+
+textButton1.MouseButton1Down:Connect(function()
+    local code = textBox.Text
+    loadstring(code)() -- Executa o código do TextBox
+end)
+
+textButton2.MouseButton1Down:Connect(function()
+    textBox.Text = ""
+end)
+
+textButton3.MouseButton1Click:Connect(function()
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "WRD API";
+        Text = "Bro Its a Joke, Relax";
+        Duration = math.huge;
+        Button1 = "OK"
+    })
+end)
+
+textButton4.MouseButton1Down:Connect(function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/main/ExeCurious%20%5BScript%20Hub%5D"))()
+end)
+
+
+local function makeDraggable(gui)
+    local dragging
+    local dragInput
+    local dragStart
+    local startPos
+
+    local function update(input)
+        local delta = input.Position - dragStart
+        gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+
+    gui.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = gui.Position
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    gui.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+
+    game:GetService("UserInputService").InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            update(input)
+        end
+    end)
+end
+
+makeDraggable(frame)
