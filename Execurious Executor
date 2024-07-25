@@ -2,7 +2,6 @@
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "ExampleGui"
 screenGui.ResetOnSpawn = false
-
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 
@@ -29,6 +28,7 @@ textBox.Size = UDim2.new(0.9, 0, 0.3, 0)
 textBox.Position = UDim2.new(0.05, 0, 0.3, 0)
 textBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 textBox.Text = ""
+textBox.ClearTextOnFocus = false
 textBox.PlaceholderText = "" 
 textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 textBox.Parent = frame
