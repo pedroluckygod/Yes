@@ -49,7 +49,7 @@ local textButton1 = Instance.new("TextButton")
 textButton1.Size = UDim2.new(0.2, -5, 0.1, 0)
 textButton1.Position = UDim2.new(0.05, 0, 0.7, 0)
 textButton1.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-Text = "Execute"
+textButton1.Text = "Execute"
 textButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
 textButton1.Parent = frame
 
