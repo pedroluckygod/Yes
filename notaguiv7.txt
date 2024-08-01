@@ -101,7 +101,7 @@ TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0.272000015, 0, 0.0189999994, 0)
 TextLabel.Size = UDim2.new(0, 170, 0, 32)
 TextLabel.Font = Enum.Font.Arial
-TextLabel.Text = "n0t4gui v7.1 [Leaked]"
+TextLabel.Text = "n0t4gui v7.1 [Edited"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
@@ -419,7 +419,7 @@ infYield.Text = "Infinite Yield"
 infYield.TextColor3 = Color3.fromRGB(255, 255, 255)
 infYield.TextScaled = true
 infYield.TextSize = 14.000
-infYield.TextWrapped = true
+infYield.TextWrapped = true5
 
 k00pk00p.Name = "k00pk00p"
 k00pk00p.Parent = TextLabel_4
@@ -858,7 +858,7 @@ kooprain.BorderColor3 = Color3.fromRGB(255, 255, 255)
 kooprain.Position = UDim2.new(0.418000013, 0, -1.5, 0)
 kooprain.Size = UDim2.new(0, 99, 0, 39)
 kooprain.Font = Enum.Font.SourceSans
-kooprain.Text = "koop rain"
+kooprain.Text = "Jumpscare"
 kooprain.TextColor3 = Color3.fromRGB(255, 255, 255)
 kooprain.TextScaled = true
 kooprain.TextSize = 14.000
@@ -897,7 +897,7 @@ looped.BorderColor3 = Color3.fromRGB(255, 255, 255)
 looped.Position = UDim2.new(0.418000013, 0, 0, 26)
 looped.Size = UDim2.new(0, 99, 0, 39)
 looped.Font = Enum.Font.SourceSans
-looped.Text = "looped virus jumpscare"
+looped.Text = "k00pgui revival"
 looped.TextColor3 = Color3.fromRGB(255, 255, 255)
 looped.TextScaled = true
 looped.TextSize = 14.000
@@ -1041,37 +1041,16 @@ end
 
 
 function bsky()
+  game.Lighting:ClearAllChildren()
+wait(0.3)
   
--- IDs das Skyboxes
-local skyboxIds = {
-    "rbxassetid://169585459",
-    "rbxassetid://169585475",
-    "rbxassetid://169585485",
-    "rbxassetid://169585502",
-    "rbxassetid://169585515",
-    "rbxassetid://169585502",
-    "rbxassetid://169585485",
-    "rbxassetid://169585475"
-}
-
+  local newSkyboxId = "rbxassetid://18698772409"
 local skyboxProps = {"SkyboxBk", "SkyboxDn", "SkyboxFt", "SkyboxLf", "SkyboxRt", "SkyboxUp"}
 
 local sky = game.Lighting:FindFirstChildOfClass("Sky") or Instance.new("Sky", game.Lighting)
-
--- Função para alterar os IDs da Skybox
-local function cycleSkyboxIds()
-    while true do
-        for _, id in ipairs(skyboxIds) do
-            for _, prop in ipairs(skyboxProps) do
-                sky[prop] = id
-            end
-            wait(0.15) -- Espera 0.15 segundos antes de trocar para o próximo ID
-        end
-    end
+for _, prop in ipairs(skyboxProps) do sky[prop] = newSkyboxId 
+  
 end
-
--- Inicia a função para alterar os IDs
-cycleSkyboxIds()
 end
 
 -- Chamar a função para atualizar a skybox
@@ -1092,7 +1071,7 @@ end
 
 
 function ptone()
-  local ID =18512422227 -- Change your ID here fellas cXz (Image ID)
+  local ID =18698660116 -- Change your ID here fellas cXz (Image ID)
 local particle = true
 
 -- Don’t change anything down below if you don’t know what are you doing [This script made by cXyzkidd]
@@ -1207,7 +1186,7 @@ function una()
     end
 end
 
--- Desancorar todas as partes no Workspace
+-- Desancorar todas as partes do Workspace
 unanchorAllParts(game.Workspace)
 end
 
@@ -1288,8 +1267,8 @@ for i, v in pairs(game.Players:GetChildren()) do
 table.insert(playerLeaderstats, v)
 end
 for i, v in pairs(playerLeaderstats) do
-pe = Instance.new("ParticleEmitter",v.Character.Torso)
-pe.Texture = "http://www.roblox.com/asset/?id=127476787"
+pe = Instance.new("ParticleEmitter",v.Character.Head)
+pe.Texture = "http://www.roblox.com/asset/?id=18698501313"
 pe.VelocitySpread = 200
 end
 end
@@ -1678,65 +1657,56 @@ decalspam(ID)
 end
 
 function sssx()
-game.Lighting:ClearAllChildren()
-  
-  local textureId =16028135551
-  local skybox = Instance.new("Sky")
-  
-  skybox.Parent = game.Lighting
-  
-    -- Atualizar os IDs das texturas da skybox
-    skybox.SkyboxBk = textureId
-    skybox.SkyboxDn = textureId
-    skybox.SkyboxFt = textureId
-    skybox.SkyboxLf = textureId
-    skybox.SkyboxRt = textureId
-    skybox.SkyboxUp = textureId
-  
-  --decal
-  
-  local ID =16028135551
-function spamDecal(v)
-    if v:IsA("Part") then
-        for i=0, 5 do
-            D = Instance.new("Decal")
-            D.Name = "MYDECALHUE"
-            D.Face = i
-            D.Parent = v
-            D.Texture = ("rbxassetid://"..Id)
-        end
-    else
-        if v:IsA("Model") then
-            for a,b in pairs(v:GetChildren()) do
-                spamDecal(b)
-            end
-        end
-    end
-end
-function decalspam(id) --use this function, not the one on top
-    Id = id
-    for i,v in pairs(game.Workspace:GetChildren()) do
-        if v:IsA("Part") then
-        for i=0, 5 do
-            D = Instance.new("Decal")
-            D.Name = "MYDECALHUE"
-            D.Face = i
-            D.Parent = v
-            D.Texture = ("rbxassetid://"..id)
-        end
-    else
-        if v:IsA("Model") then
-            for a,b in pairs(v:GetChildren()) do
-                spamDecal(b)
-            end
-        end
-    end
-end
-end
- 
-decalspam(ID)
-  
-  
+		for i,v in next,workspace:children''do
+			if(v:IsA'BasePart')then
+				me=v;
+				bbg=Instance.new('BillboardGui',me);
+				bbg.Name='stuf';
+				bbg.Adornee=me;
+				bbg.Size=UDim2.new(2.5,0,2.5,0)
+				--bbg.StudsOffset=Vector3.new(0,2,0)
+				tlb=Instance.new'TextLabel';
+				tlb.Text='666 666 666 666 666 666';
+				tlb.Font='SourceSansBold';
+				tlb.FontSize='Size48';
+				tlb.TextColor3=Color3.new(1,0,0);
+				tlb.Size=UDim2.new(1.25,0,1.25,0);
+				tlb.Position=UDim2.new(-0.125,-22,-1.1,0);
+				tlb.BackgroundTransparency=1;
+				tlb.Parent=bbg;
+			end;end;
+		function xds(dd)
+			for i,v in next,dd:children''do
+				if(v:IsA'BasePart')then
+					v.BrickColor=BrickColor.new'Really black';
+					v.TopSurface='Smooth';
+					v.BottomSurface='Smooth';
+					s=Instance.new('SelectionBox',v);
+					s.Adornee=v;
+					s.Color=BrickColor.new'Really red';
+					a=Instance.new('PointLight',v);
+					a.Color=Color3.new(1,0,0);
+					a.Range=15;
+					a.Brightness=5;
+					f=Instance.new('Fire',v);
+					f.Size=19;
+					f.Heat=22;
+				end;
+	
+				local dec = 'https://www.roblox.com/assets/?id=18414260521';
+				local fac = {'Front', 'Back', 'Left', 'Right', 'Top', 'Bottom'}
+				--coroutine.wrap(function()
+				--for ,_ in pairs(fac) do
+				--local ddec = Instance.new("Decal", v)
+				--ddec.Face = 
+				--ddec.Texture = dec
+				--end end)()
+				if #(v:GetChildren())>0 then
+					xds(v) 
+				end
+			end
+		end
+		xds(game.Workspace)
 end
  
 function ckify()
@@ -1930,7 +1900,7 @@ nootnoot.MouseButton1Down:connect(function()
             [2] = {
                 [1] = part
             },
-            [3] = stringg
+            [3] = stringgl
         }
 
         _(args)
@@ -2068,7 +2038,7 @@ nootnoot.MouseButton1Down:connect(function()
             end
         end
     end
-    Sky("18512422227")
+    Sky("18698772409")
 
     -----------------------------------
 
@@ -2343,7 +2313,7 @@ nootnoot.MouseButton1Down:connect(function()
             end
         end 
     end
-    spam("18512422227")
+    spam("18698772409")
 
     -----------
 end)
@@ -2425,8 +2395,45 @@ function coemsaudio()
   
 end
 
+function jps()
+local jumpscareSound = Instance.new("Sound", workspace)
+jumpscareSound.Name = "JumpscareSound"
+jumpscareSound.Volume = 9
+jumpscareSound.Pitch = 0.75
+jumpscareSound.SoundId = "rbxassetid://8683380188"
+ 
+local jumpscareGUI = Instance.new("ScreenGui", nil)
+jumpscareGUI.Name = "Jumpscare"
+local image = Instance.new("ImageLabel", jumpscareGUI)
+image.Name = "JumpscareImage"
+image.BackgroundColor3 = Color3.new(0, 0, 0)
+image.BorderColor3 = Color3.new(255, 255, 255)
+image.BorderSizePixel = 0
+image.Size = UDim2.new(1, 0, 1, 0)
+image.Image ="rbxassetid://18698501313"
+image.Active = true
 
+for i, c in pairs(game.Players:GetChildren()) do
+    local jumpscareClone = jumpscareGUI:Clone()
+    jumpscareClone.Parent = c.PlayerGui
+end
+jumpscareSound:Play()
+wait(10)
+jumpscareSound:Destroy()
+for i, c in pairs(game.Players:GetChildren()) do
+    c.PlayerGui.Jumpscare:Destroy()
+end
+end
 
+function kgr()
+loadstring(game:HttpGet("https://pastebin.com/raw/8hdcuUw2"))()
+end
+
+function cgr()
+  loadstring(game:GetObjects("rbxassetid://16738300563")[1].Source)()
+end
+looped.MouseButton1Down:Connect(kgr)
+kooprain.MouseButton1Down:Connect(jps)
 rain.MouseButton1Down:Connect(coemsaudio)
 shamsterky.MouseButton1Down:Connect(kpscare)
 dreemy.MouseButton1Down:Connect(facenota)
@@ -2447,7 +2454,7 @@ disco.MouseButton1Down:Connect(dexexp)
 gametp.MouseButton1Down:Connect(realone)
 theme.MouseButton1Down:Connect(song)
 log.MouseButton1Down:Connect(songA)
-music.MouseButton1Down:Connect(ck)
+music.MouseButton1Down:Connect(cgr)
 musicbypas.MouseButton1Down:Connect(rocky)
 musicbypas2.MouseButton1Down:Connect(n0taguiv3)
 musicbypas3.MouseButton1Down:Connect(vhub)
