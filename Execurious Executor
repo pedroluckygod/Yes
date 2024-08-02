@@ -40,7 +40,7 @@ textBox.Size = UDim2.new(0.9, 0, 0.3, 0)
 textBox.Position = UDim2.new(0.05, 0, 0.3, 0)
 textBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 textBox.Text = ""
-textBox.PlaceholderText = "" -- Atualizado de "PlaceHolderText" para "PlaceholderText"
+textBox.PlaceholderText = "Updates: Fixed _G.PL(), Fixed The Execute Button Text." -- Atualizado de "PlaceHolderText" para "PlaceholderText"
 textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 textBox.Parent = frame
 
@@ -159,8 +159,8 @@ function shcNA()
 end
 
 function shcPL()
-  if textbox.Text == "_G.PL()" then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua'))()
+  if textBox.Text == "_G.PL()" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua"))()
   end
 end
 
