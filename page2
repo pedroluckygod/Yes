@@ -1,4 +1,4 @@
--- Criação da ScreenGui
+
 local screenGui1 = Instance.new("ScreenGui")
 screenGui1.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 screenGui1.ResetOnSpawn = false
