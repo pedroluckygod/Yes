@@ -85,28 +85,7 @@ ButtonA6.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA6.Text = "Destroy Ui"
 ButtonA6.Parent = scrollingFrame1
 
-function sklb()
-  for i,v in pairs(game.Players:GetPlayers()) do
-    if v.Character then
-      function pSpam()
-        charpos = v.Character.Position
-        pos = Vector3.new(0, 9, 0)
-         p = Instance.new("Part")
-        p.Parent = game.Workspace
-        p.Anchored = false
-        p.Position = charpos + pos
-        function doit()
-          for i = 1, 300 do
-            wait(0.3)
-            pSpam(v.Character)
-          end
-          doit()
-        end
-      end
-    end
-  end
-          
-end
+
 -- Conexão do novo botão com a função
 
 -- Definição da nova função
