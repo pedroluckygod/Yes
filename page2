@@ -1,0 +1,242 @@
+-- Criação da ScreenGui
+local screenGui1 = Instance.new("ScreenGui")
+screenGui1.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui1.ResetOnSpawn = false
+
+-- Criação do Frame principal
+local mainFrame1 = Instance.new("Frame")
+mainFrame1.Size = UDim2.new(0, 200, 0, 300)
+mainFrame1.Position = UDim2.new(0.5, -100, 0.5, -150)
+mainFrame1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+mainFrame1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+mainFrame1.Parent = screenGui1
+
+-- Criação da TextLabel no topo
+local titleLabel1 = Instance.new("TextLabel")
+titleLabel1.Size = UDim2.new(1, 0, 0, 30)
+titleLabel1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel1.TextColor3 = Color3.fromRGB(0, 0, 0)
+titleLabel1.BorderColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel1.Text = "n0tagui v2 OP [Page 2]"
+titleLabel1.Parent = mainFrame1
+
+-- Criação do ScrollingFrame
+local scrollingFrame1 = Instance.new("ScrollingFrame")
+scrollingFrame1.Size = UDim2.new(1, 0, 1, -30)
+scrollingFrame1.Position = UDim2.new(0, 0, 0, 30)
+scrollingFrame1.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+scrollingFrame1.CanvasSize = UDim2.new(0, 0, 0, 500)
+scrollingFrame1.ScrollBarThickness = 23
+scrollingFrame1.Parent = mainFrame1
+
+-- Adicionando TextButtons ao ScrollingFrame um por um
+local button1 = Instance.new("TextButton")
+button1.Size = UDim2.new(0.8, 0, 0, 50)
+button1.Position = UDim2.new(0.1, 0, 0, 0)
+button1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button1.TextColor3 = Color3.fromRGB(255, 255, 255)
+button1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button1.Text = "Disco"
+button1.Parent = scrollingFrame
+
+local button2 = Instance.new("TextButton")
+button2.Size = UDim2.new(0.8, 0, 0, 50)
+button2.Position = UDim2.new(0.1, 0, 0, 60)
+button2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button2.TextColor3 = Color3.fromRGB(255, 255, 255)
+button2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button2.Text = "Message"
+button2.Parent = scrollingFrame
+
+local button3 = Instance.new("TextButton")
+button3.Size = UDim2.new(0.8, 0, 0, 50)
+button3.Position = UDim2.new(0.1, 0, 0, 120)
+button3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button3.TextColor3 = Color3.fromRGB(255, 255, 255)
+button3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button3.Text = "Leaderstats"
+button3.Parent = scrollingFrame
+
+local button4 = Instance.new("TextButton")
+button4.Size = UDim2.new(0.8, 0, 0, 50)
+button4.Position = UDim2.new(0.1, 0, 0, 180)
+button4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button4.TextColor3 = Color3.fromRGB(255, 255, 255)
+button4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button4.Text = "Unanchor"
+button4.Parent = scrollingFrame
+
+local button5 = Instance.new("TextButton")
+button5.Size = UDim2.new(0.8, 0, 0, 50)
+button5.Position = UDim2.new(0.1, 0, 0, 240)
+button5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button5.TextColor3 = Color3.fromRGB(255, 255, 255)
+button5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button5.Text = "n0tagui v3"
+button5.Parent = scrollingFrame
+
+local button6 = Instance.new("TextButton")
+button6.Size = UDim2.new(0.8, 0, 0, 50)
+button6.Position = UDim2.new(0.1, 0, 0, 300)
+button6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button6.TextColor3 = Color3.fromRGB(255, 255, 255)
+button6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button6.Text = "Destroy Ui"
+button6.Parent = scrollingFrame
+
+function sklb()
+  for i,v in pairs(game.Players:GetPlayers()) do
+    if v.Character then
+      function pSpam()
+        charpos = v.Character.Position
+        pos = Vector3.new(0, 9, 0)
+         p = Instance.new("Part")
+        p.Parent = game.Workspace
+        p.Anchored = false
+        p.Position = charpos + pos
+        function doit()
+          for i = 1, 300 do
+            wait(0.3)
+            pSpam(v.Character)
+          end
+          doit()
+        end
+      end
+    end
+  end
+          
+end
+-- Conexão do novo botão com a função
+
+-- Definição da nova função
+function antiskid()
+    
+    for i,v in pairs(game.Workspace:GetDescendants()) do
+      if v:IsA("Message") or v:IsA("Hint") or v:IsA("Sound") or v:IsA("Decal") or v:IsA("ParticleEmitter") then do
+        v:Destroy()
+      end
+      end
+      for a,b in pairs(game.Lighting:GetDescendants()) do
+        if b:IsA("Sky") then do
+          b:Destroy()
+        end
+        end
+        end
+        end
+      end
+
+
+
+function ds()
+  game.Lighting.Ambient = Color3.new(math.random(), math.random(), math.random())
+			wait(.25)
+	
+		
+		local basics = {Color3.new(255/255,0/255,0/255),Color3.new(255/255,85/255,0/255),Color3.new(218/255,218/255,0/255),Color3.new(0/255,190/255,0/255),Color3.new(0/255,85/255,255/255),Color3.new(0/255,0/255,127/255),Color3.new(170/255,0/255,255/255),Color3.new(0/255,204/255,204/255),Color3.new(255/255,85/255,127/255),Color3.new(0/255,0/255,0/255),Color3.new(255/255,255/255,255/255)}
+		game.Lighting.FogStart = 25
+		game.Lighting.FogEnd = 300
+		while true do
+			wait(0.5)
+			game.Lighting.FogColor = basics[math.random(1,#basics)]
+		end
+end
+
+function sk()
+  local ms = Instance.new("Message",game.Workspace)
+  ms.Text = "Team n0taPlayer fu**ed This game in the an**hole"
+  wait(2)
+  ms.Text = "team n0taPlayer was here"
+  wait(4)
+  ms:Destroy()
+end
+
+function pt()
+    local TeamsService = game:GetService("Teams")
+local colors = {"Bright red", "Bright blue", "Bright green", "Bright yellow", "Bright orange", "Bright violet", "Bright pink"}
+local teamCount = 0
+
+-- Função para criar uma equipe com nome e cor aleatórios
+local function createRandomTeam()
+    teamCount = teamCount + 1
+    local teamName = "omg n0taPlayer🤑🤑" .. teamCount
+    local randomColor = colors[math.random(1, #colors)]
+
+    local team = Instance.new("Team")
+    team.Name = teamName
+    team.TeamColor = BrickColor.new(randomColor)
+    team.AutoAssignable = true
+    team.Parent = TeamsService
+end
+
+function ptl()
+  local function unanchorAllParts(parent)
+    for _, part in ipairs(parent:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.Anchored = false
+        end
+    end
+end
+
+-- Desancorar todas as partes do Workspace
+unanchorAllParts(game.Workspace)
+end
+end
+
+function th()
+  loadstring(game:HttpGet("https://pastebin.com/raw/Cn9CaAfh"))()
+end
+
+
+function iyna()
+  screenGui1:Destroy()
+end
+
+-- Conexão dos botões com as funções
+
+
+
+
+
+button1.MouseButton1Down:Connect(ds)
+button2.MouseButton1Down:Connect(sk)
+button3.MouseButton1Down:Connect(pt)
+button4.MouseButton1Down:Connect(ptl)
+button5.MouseButton1Down:Connect(th)
+button6.MouseButton1Down:Connect(iyna)
+
+
+
+local dragging = false
+local dragInput, mousePos, framePos
+
+local function update(input)
+    local delta = input.Position - mousePos
+    mainFrame1.Position = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
+end
+
+mainFrame1.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        mousePos = input.Position
+        framePos = mainFrame1.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+mainFrame1.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if dragging and input == dragInput then
+        update(input)
+    end
+end)
