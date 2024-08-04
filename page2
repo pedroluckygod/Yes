@@ -30,7 +30,7 @@ scrollingFrame1.CanvasSize = UDim2.new(0, 0, 0, 500)
 scrollingFrame1.ScrollBarThickness = 23
 scrollingFrame1.Parent = mainFrame1
 
--- Adicionando TextButtons ao ScrollingFrame um por um
+-- Adicionando TextButtons ao scrollingFrame1 um por um
 local ButtonA1 = Instance.new("TextButton")
 ButtonA1.Size = UDim2.new(0.8, 0, 0, 50)
 ButtonA1.Position = UDim2.new(0.1, 0, 0, 0)
@@ -38,7 +38,7 @@ ButtonA1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA1.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonA1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA1.Text = "Disco"
-ButtonA1.Parent = scrollingFrame
+ButtonA1.Parent = scrollingFrame1
 
 local ButtonA2 = Instance.new("TextButton")
 ButtonA2.Size = UDim2.new(0.8, 0, 0, 50)
@@ -47,7 +47,7 @@ ButtonA2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA2.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonA2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA2.Text = "Message"
-ButtonA2.Parent = scrollingFrame
+ButtonA2.Parent = scrollingFrame1
 
 local ButtonA3 = Instance.new("TextButton")
 ButtonA3.Size = UDim2.new(0.8, 0, 0, 50)
@@ -56,7 +56,7 @@ ButtonA3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA3.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonA3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA3.Text = "Leaderstats"
-ButtonA3.Parent = scrollingFrame
+ButtonA3.Parent = scrollingFrame1
 
 local ButtonA4 = Instance.new("TextButton")
 ButtonA4.Size = UDim2.new(0.8, 0, 0, 50)
@@ -65,7 +65,7 @@ ButtonA4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA4.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonA4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA4.Text = "Unanchor"
-ButtonA4.Parent = scrollingFrame
+ButtonA4.Parent = scrollingFrame1
 
 local ButtonA5 = Instance.new("TextButton")
 ButtonA5.Size = UDim2.new(0.8, 0, 0, 50)
@@ -74,7 +74,7 @@ ButtonA5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA5.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonA5.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA5.Text = "n0tagui v3"
-ButtonA5.Parent = scrollingFrame
+ButtonA5.Parent = scrollingFrame1
 
 local ButtonA6 = Instance.new("TextButton")
 ButtonA6.Size = UDim2.new(0.8, 0, 0, 50)
@@ -83,7 +83,7 @@ ButtonA6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA6.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonA6.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonA6.Text = "Destroy Ui"
-ButtonA6.Parent = scrollingFrame
+ButtonA6.Parent = scrollingFrame1
 
 function sklb()
   for i,v in pairs(game.Players:GetPlayers()) do
