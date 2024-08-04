@@ -198,7 +198,7 @@ end
 
 
 
-buttonA1.MouseButton1Down:Connect(ds)
+ButtonA1.MouseButton1Down:Connect(ds)
 ButtonA2.MouseButton1Down:Connect(sk)
 ButtonA3.MouseButton1Down:Connect(pt)
 ButtonA4.MouseButton1Down:Connect(ptl)
