@@ -86,6 +86,39 @@ ButtonA6.Text = "Destroy Ui"
 ButtonA6.Parent = scrollingFrame1
 
 
+
+local ButtonA7 = Instance.new("TextButton")
+ButtonA7.Size = UDim2.new(0.8, 0, 0, 50)
+ButtonA7.Position = UDim2.new(0.1, 0, 0, 360) -- Ajuste a posição conforme necessário
+ButtonA7.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ButtonA7.TextColor3 = Color3.fromRGB(255, 255, 255)
+ButtonA7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ButtonA7.Text = "kill all"
+ButtonA7.Parent = scrollingFrame1
+
+-- Conexão do novo botão com uma função
+ButtonA7.MouseButton1Down:Connect(function()
+    for _, player in pairs(game.Players:GetPlayers()) do
+      player.Character.Humanoid.Health = 0
+    end
+end)
+
+local ButtonA8 = Instance.new("TextButton")
+ButtonA8.Size = UDim2.new(0.8, 0, 0, 50)
+ButtonA8.Position = UDim2.new(0.1, 0, 0, 420) -- Ajuste a posição conforme necessário
+ButtonA8.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ButtonA8.TextColor3 = Color3.fromRGB(255, 255, 255)
+ButtonA8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ButtonA8.Text = "ShutDown"
+ButtonA8.Parent = scrollingFrame1
+
+-- Conexão do novo botão com uma função
+ButtonA8.MouseButton1Down:Connect(function()
+    for _, player in pairs(game.Players:GetPlayers()) do
+      player:Destroy()
+    end
+end)
+
 -- Conexão do novo botão com a função
 
 -- Definição da nova função
@@ -138,7 +171,7 @@ local teamCount = 0
 -- Função para criar uma equipe com nome e cor aleatórios
 local function createRandomTeam()
     teamCount = teamCount + 1
-    local teamName = "omg n0taPlayer🤑🤑" .. teamCount
+    local teamName = "omg n0taPlayer" .. teamCount
     local randomColor = colors[math.random(1, #colors)]
 
     local team = Instance.new("Team")
