@@ -1246,7 +1246,7 @@ end
 
 
 function leak()
-  loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-supah-secrt-gui-9974"))()
+  loadstring(game:HttpGet("not-leaking-it-bro"))()
 end
 
 function xx()
