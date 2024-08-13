@@ -15,7 +15,7 @@ cmdtext =
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "The gui"
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
+screenGui.Enabled = true
 
 local frame = Instance.new("Frame")
 frame.Size = UDim2.new(0.5, 0, 0.5, 0)
@@ -203,3 +203,61 @@ textButton1.MouseButton1Down:Connect(shcIY)
 textButton1.MouseButton1Down:Connect(shcNA)
 textButton1.MouseButton1Down:Connect(shcNT)
 textButton1.MouseButton1Down:Connect(shcPL)
+
+local screenGui1 = Instance.new("ScreenGui")
+local imageButton = Instance.new("ImageButton")
+local uiCorner = Instance.new("UICorner")
+
+imageButton.Size = UDim2.new(0, 50, 0, 50)
+imageButton.Position = UDim2.new(0.5, -25, 0.5, -25)
+imageButton.AnchorPoint = Vector2.new(0.5, 0.5)
+imageButton.Image = "rbxassetid://3010568613"
+imageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+imageButton.BorderSizePixel = 3
+imageButton.BorderColor3 = Color3.fromRGB(255, 0, 0)
+imageButton.Parent = screenGui1
+imageButton.MouseButton1Down:Connect(function()
+    screenGui.Enabled = not screenGui.Enabled
+end)
+
+
+
+uiCorner.CornerRadius = UDim.new(0, 20)
+uiCorner.Parent = imageButton
+
+screenGui1.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+
+local dragging = false
+local dragInput, mousePos, framePos
+
+local function update(input)
+    local delta = input.Position - mousePos
+    imageButton.Position = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
+end
+
+imageButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        mousePos = input.Position
+        framePos = imageButton.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+imageButton.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if dragging and input == dragInput then
+        update(input)
+    end
+end)
