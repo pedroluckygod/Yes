@@ -1,4 +1,5 @@
 local gui = Instance.new("ScreenGui", game.CoreGui)
+gui.Name = "cgui"
 
 
 local main = Instance.new("Frame")
