@@ -6,5 +6,5 @@ local function showNotification(title, text, duration)
     })
 end
 
-showNotification("Cryptic Ui FanMade", "commands: cmds [Display Commands], revc00lgui, c00lgui revival (fanmade), ofcrevcgui (official c00lgui revival)", math.huge)
+showNotification("Cryptic Ui FanMade", "commands: cmds [Display Commands], revc00lgui, c00lgui revival (fanmade), ofcrevcgui (official c00lgui revival)", 9)
   end
