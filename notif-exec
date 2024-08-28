@@ -1,0 +1,10 @@
+local function showNotification(title, text, duration)
+    StarterGui:SetCore("SendNotification", {
+        Title = title;
+        Text = text;
+        Duration = duration or 5;
+    })
+end
+
+showNotification("Cryptic Ui FanMade", "commands: cmds [Display Commands], revc00lgui, c00lgui revival (fanmade), ofcrevcgui (official c00lgui revival)", math.huge)
+  end
