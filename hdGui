@@ -1,0 +1,138 @@
+local gui = Instance.new("ScreenGUI", game.Players.LocalPlayer:WaitForChild("PlayerGui"))
+local nf = Instance.new("Frame")
+nf.Size = UDim2.new(0.5, 0, 0.5, 0)
+nf.Position = UDim2.new(0.5, 0, 0.5, 0)
+nf.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+nf.BorderColor3 = Color3.new(0, 0, 0)
+nf.BorderSizePixel = 1
+nf.Active = true
+nf.BackgroundTransparency = 0 
+nf.Draggable = true
+nf.Parent = gui
+
+local nfCorner = Instance.new("UICorner")
+nfCorner.CornerRadius = UDim.new(0, 5)
+nfCorner.Parent = nf
+
+
+
+
+local hd = Instance.new("TextLabel")
+hd.Size = UDim2.new(0.3, 0, 0.2, 0)
+hd.Position = UDim2.new(0.01, 0, 0.01, 0)
+hd.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+hd.BorderColor3 = Color3.new(0, 0, 0)
+hd.BorderSizePixel = 1
+hd.Text = "HD Admin GUI"
+hd.BackgroundTransparency = 1
+hd.TextColor3 = Color3.new(255, 255, 255)
+hd.Font = Enum.Font.Code
+hd.Parent = nf
+hd.TextScaled = true
+
+
+
+
+
+local _1 = Instance.new("TextButton")
+_1.Size = UDim2.new(0.3, 0, 0.1, 0)
+_1.Position = UDim2.new(0.37, 0, 0.03, 0)
+_1.BackgroundColor3 = Color3.new(0, 0, 0)
+_1.BorderColor3 = Color3.new(0, 0, 0)
+_1.BorderSizePixel = 1
+_1.Text = "subspace tripmine"
+_1.BackgroundTransparency = 0 
+_1.TextColor3 = Color3.new(255, 255, 255)
+_1.Font = Enum.Font.Code
+_1.Parent = nf
+_1.TextScaled = true
+_1.MouseButton1Down:Connect(function()
+local args = {
+    [1] = ";gear me 11999247"
+}
+
+game:GetService("ReplicatedStorage").HDAdminClient.Signals.RequestCommand:InvokeServer(unpack(args))
+
+end)
+local _2 = Instance.new("TextButton")
+_2.Size = UDim2.new(0.3, 0, 0.1, 0)
+_2.Position = UDim2.new(0.37, 0, 0.18, 0)
+_2.BackgroundColor3 = Color3.new(0, 0, 0)
+_2.BorderColor3 = Color3.new(0, 0, 0)
+_2.BorderSizePixel = 1
+_2.Text = "be g00by"
+_2.BackgroundTransparency = 0 
+_2.TextColor3 = Color3.new(255, 255, 255)
+_2.Font = Enum.Font.Code
+_2.Parent = nf
+_2.TextScaled = true
+_2.MouseButton1Down:Connect(function()
+local args = {
+    [1] = ";char me ig00byd0lan"
+}
+
+game:GetService("ReplicatedStorage").HDAdminClient.Signals.RequestCommand:InvokeServer(unpack(args))
+
+end)
+
+local _3 = Instance.new("TextButton")
+_3.Size = UDim2.new(0.30, 0, 0.1, 0)
+_3.Position = UDim2.new(0.37, 0, 0.34, 0)
+_3.BackgroundColor3 = Color3.new(0, 0, 0)
+_3.BorderColor3 = Color3.new(0, 0, 0)
+_3.BorderSizePixel = 1
+_3.Text = "disco"
+_3.BackgroundTransparency = 0 
+_3.TextColor3 = Color3.new(255, 255, 255)
+_3.Font = Enum.Font.Code
+_3.Parent = nf
+_3.TextScaled = true
+_3.MouseButton1Down:Connect(function()
+local args = {
+    [1] = ";disco."
+}
+
+game:GetService("ReplicatedStorage").HDAdminClient.Signals.RequestCommand:InvokeServer(unpack(args))
+
+end)
+
+local _4 = Instance.new("TextButton")
+_4.Size = UDim2.new(0.3, 0, 0.1, 0)
+_4.Position = UDim2.new(0.37, 0, 0.5, 0)
+_4.BackgroundColor3 = Color3.new(0, 0, 0)
+_4.BorderColor3 = Color3.new(0, 0, 0)
+_4.BorderSizePixel = 1
+_4.Text = "Fly"
+_4.BackgroundTransparency = 0 
+_4.TextColor3 = Color3.new(255, 255, 255)
+_4.Font = Enum.Font.Code
+_4.Parent = nf
+_4.TextScaled = true
+_4.MouseButton1Down:Connect(function()
+local args = {
+    [1] = ";fly"
+}
+
+game:GetService("ReplicatedStorage").HDAdminClient.Signals.RequestCommand:InvokeServer(unpack(args))
+
+end)
+local _5 = Instance.new("TextButton")
+_5.Size = UDim2.new(0.3, 0, 0.1, 0)
+_5.Position = UDim2.new(0.37, 0, 0.67, 0)
+_5.BackgroundColor3 = Color3.new(0, 0, 0)
+_5.BorderColor3 = Color3.new(0, 0, 0)
+_5.BorderSizePixel = 1
+_5.Text = "low fogend"
+_5.BackgroundTransparency = 0 
+_5.TextColor3 = Color3.new(255, 255, 255)
+_5.Font = Enum.Font.Code
+_5.Parent = nf
+_5.MouseButton1Down:Connect(function()
+local args = {
+    [1] = ";fogend 30"
+}
+
+game:GetService("ReplicatedStorage").HDAdminClient.Signals.RequestCommand:InvokeServer(unpack(args))
+
+end)
+
