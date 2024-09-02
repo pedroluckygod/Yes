@@ -1,0 +1,23 @@
+ 
+
+local gui = Instance.new("ScreenGui",game.CoreGui)
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(1.0, 0, 1.2, 0)
+label.Position = UDim2.new(0.0, 0, 0, 0)
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+label.BorderColor3 = Color3.new(1,1,1)
+label.BorderSizePixel = 3
+label.Text = "GET REKT XYMATESKIDD OR WHATEVER, PRIVATE!"
+label.BackgroundTransparency = 0 
+label.TextColor3 = Color3.new(255, 255, 255)
+label.Font = Enum.Font.SourceSansBold
+label.Draggable = true
+label.Parent = gui
+label.TextScaled = true
+wait(4)
+
+function kick(player, reason)
+  local plr = player
+  plr:Kick(reason)
+end
+kick(game.Players.LocalPlayer, "its private why u doin it?")
