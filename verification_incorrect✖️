@@ -1,0 +1,102 @@
+  local gui = Instance.new("ScreenGui",game.CoreGui)
+
+
+
+
+
+
+
+
+
+
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0.23, 0, 0.2, 0)
+main.Position = UDim2.new(0.01, 0, 0.3, 0)
+main.BackgroundColor3 = Color3.new(0,0,0)
+main.BorderColor3 = Color3.new(1,1,1)
+main.BorderSizePixel = 3
+main.Active = true
+main.BackgroundTransparency = 0 
+main.Draggable = true
+main.Parent = gui
+
+
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(1.0, 0, 0.2, 0)
+label.Position = UDim2.new(0.0, 0, -0.13, 0)
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+label.BorderColor3 = Color3.new(1,1,1)
+label.BorderSizePixel = 3
+label.Text = "n0tagui private panel"
+label.BackgroundTransparency = 0 
+label.TextColor3 = Color3.new(255, 255, 255)
+label.Font = Enum.Font.SourceSansBold
+label.Draggable = true
+label.Parent = main
+label.TextScaled = true
+
+local pf = Instance.new("TextButton")
+pf.Size = UDim2.new(0.3, 0, 0.9, 0)
+pf.Position = UDim2.new(0.0, 0, 0.1, 0)
+pf.BackgroundColor3 = Color3.new(0, 0, 0)
+pf.BorderColor3 = Color3.new(1,1,1)
+pf.BorderSizePixel = 3
+pf.Text = "Punch Fling"
+pf.BackgroundTransparency = 0 
+pf.TextColor3 = Color3.new(255, 255, 255)
+pf.Font = Enum.Font.SourceSans
+pf.Parent = main
+pf.TextScaled = true
+pf.MouseButton1Down:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fedoratums/Base-Script/Base-Script/fedoratum punch fling",true))()
+end)
+local bt = Instance.new("TextButton")
+bt.Size = UDim2.new(0.3, 0, 0.9, 0)
+bt.Position = UDim2.new(0.35, 0, 0.1, 0)
+bt.BackgroundColor3 = Color3.new(0, 0, 0)
+bt.BorderColor3 = Color3.new(1,1,1)
+bt.BorderSizePixel = 3
+bt.Text = "Btools"
+bt.BackgroundTransparency = 0 
+bt.TextColor3 = Color3.new(255, 255, 255)
+bt.Font = Enum.Font.SourceSans
+bt.Parent = main
+bt.TextScaled = true
+bt.MouseButton1Down:Connect(function()
+  loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()
+end)
+local fp = Instance.new("TextButton")
+fp.Size = UDim2.new(0.3, 0, 0.9, 0)
+fp.Position = UDim2.new(0.7, 0, 0.1, 0)
+fp.BackgroundColor3 = Color3.new(0, 0, 0)
+fp.BorderColor3 = Color3.new(1,1,1)
+fp.BorderSizePixel = 3
+fp.Text = "Floating Pad"
+fp.BackgroundTransparency = 0 
+fp.TextColor3 = Color3.new(255, 255, 255)
+fp.Font = Enum.Font.SourceSans
+fp.Parent = main
+fp.TextScaled = true
+fp.MouseButton1Down:Connect(function()
+  local lcp = game.Players.LocalPlayer
+local char = lcp.Character or lcp.CharacterAdded:Wait()
+
+local hrp = char:WaitForChild("HumanoidRootPart")
+local h = char:WaitForChild("Humanoid")
+local part = Instance.new("Part", game.Workspace)
+part.Size = Vector3.new(5, 2, 5)
+part.Anchored = true
+part.Color = Color3.fromRGB(255,0,0)
+
+
+while true do
+    part.Position = hrp.Position + Vector3.new(0, -5.3, 0)
+    wait(0.0)
+    
+    if h:GetState() == Enum.HumanoidStateType.Dead then
+        part:Destroy()
+        break
+        
+    end
+end
+end)
