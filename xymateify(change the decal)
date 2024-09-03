@@ -1,0 +1,107 @@
+
+-- for you xymate
+
+
+game.Lighting:ClearAllChildren()
+wait(0.3)
+  
+  local newSkyboxId = "rbxassetid://18512422227"
+local skyboxProps = {"SkyboxBk", "SkyboxDn", "SkyboxFt", "SkyboxLf", "SkyboxRt", "SkyboxUp"}
+
+local sky = game.Lighting:FindFirstChildOfClass("Sky") or Instance.new("Sky", game.Lighting)
+for _, prop in ipairs(skyboxProps) do sky[prop] = newSkyboxId 
+  
+end
+
+-- Decal Spam
+local ID =18512422227
+function spamDecal(v)
+    if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..Id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+function decalspam(id) --use this function, not the one on top
+    Id = id
+    for i,v in pairs(game.Workspace:GetChildren()) do
+        if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+end
+ 
+decalspam(ID)
+
+-- Particles
+
+local playerLeaderstats = {}
+for i, v in pairs(game.Players:GetChildren()) do
+    table.insert(playerLeaderstats, v)
+end
+
+for i, v in pairs(playerLeaderstats) do
+    if v.Character and v.Character:FindFirstChild("Head") then
+        local pe = Instance.new("ParticleEmitter", v.Character.Head)
+        pe.Texture = "rbxassetid://18512422227"
+        pe.VelocitySpread = 550
+        pe.Size = NumberSequence.new(4)
+        pe.RotSpeed = NumberRange.new(38)
+        pe.Rate = 70
+
+        local se = Instance.new("ParticleEmitter", v.Character.Head)
+        se.Texture = "rbxassetid://18512422227"
+        se.VelocitySpread = 550
+        se.Size = NumberSequence.new(4)
+        se.RotSpeed = NumberRange.new(38)
+        se.Rate = 70
+
+        local fe = Instance.new("ParticleEmitter", v.Character.Head)
+        fe.Texture = "rbxassetid://18512422227"
+        fe.VelocitySpread = 550
+        fe.Size = NumberSequence.new(4)
+        fe.RotSpeed = NumberRange.new(38)
+        fe.Rate = 70
+    end
+end
+
+local sound = Instance.new("Sound",game.Workspace)
+  sound.Name = "H4xed By not4player214"
+  sound.SoundId = "rbxassetid://1839247124"
+  sound.Volume = 999999999999999999999
+  sound.PlaybackSpeed = 0.5
+  sound:Play()
+
+
+-- hint
+local nh = Instance.new("Hint")
+  nh.Parent = game.Workspace
+  nh.Text = "THIS GAME HAS BEEN DESTROYED BY NOTAPLAYER214 || .gg/BczVDzsTWD"
+  wait(77)
+  nh:Destroy()
+
+
+
+
