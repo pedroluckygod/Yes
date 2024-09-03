@@ -1,6 +1,13 @@
 
 -- for you xymate
 
+-- im surprised that u leak all my guis but i still dont care just get it
+
+
+
+
+
+
 
 game.Lighting:ClearAllChildren()
 wait(0.3)
