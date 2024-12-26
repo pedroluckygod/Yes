@@ -1,0 +1,90 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "patrickGui"
+gui.Parent = game.CoreGui
+
+--///patrick gui maker///--
+
+
+
+
+
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+frame.Position = UDim2.new(0.3, 0, 0.3, 0)
+frame.BackgroundColor3 = Color3.new(0,0,0)
+frame.BorderColor3 = Color3.new(0, 0, 0)
+frame.BorderSizePixel = 1
+frame.Active = true
+frame.BackgroundTransparency = 0 
+frame.Draggable = true
+frame.Parent = gui
+
+local no = Instance.new("TextLabel")
+no.Size = UDim2.new(1.0, 0, 0.1, 0)
+no.Position = UDim2.new(0.0, 0, 0.0, 0)
+no.BackgroundColor3 = Color3.new(1, 0, 0)
+no.BorderColor3 = Color3.new(0, 0, 0)
+no.BorderSizePixel = 1
+no.Text = "n0ta Z -SS Executor"
+no.BackgroundTransparency = 1
+no.TextColor3 = Color3.new(255, 0, 0)
+no.Font = Enum.Font.Code
+no.Parent = frame
+no.TextScaled = true
+
+
+local box = Instance.new("TextBox")
+box.Size = UDim2.new(0.94, 0, 0.70, 0)
+box.Position = UDim2.new(0.03, 0, 0.12, 0)
+box.BackgroundColor3 = Color3.fromRGB(13,13,13)
+box.BorderColor3 = Color3.new(0, 0, 0)
+box.BorderSizePixel = 1
+box.Text = "Execution | Backdoor v6x"
+box.TextColor3 = Color3.new(255, 255, 255)
+box.BackgroundTransparency = 0
+box.Font = Enum.Font.Code
+box.TextSize = 15
+box.Parent = frame
+
+
+local run = Instance.new("TextButton")
+run.Size = UDim2.new(0.3, 0, 0.14, 0)
+run.Position = UDim2.new(0.0, 0, 0.82, 0)
+run.BackgroundColor3 = Color3.new(0, 0, 0)
+run.BorderColor3 = Color3.new(0, 0, 0)
+run.BorderSizePixel = 1
+run.Text = "Execute"
+run.BackgroundTransparency = 0 
+run.TextColor3 = Color3.new(255, 255, 255)
+run.Font = Enum.Font.Code
+run.Parent = frame
+run.TextScaled = true
+
+
+local clr = Instance.new("TextButton")
+clr.Size = UDim2.new(0.3, 0, 0.14, 0)
+clr.Position = UDim2.new(0.27, 0, 0.82, 0)
+clr.BackgroundColor3 = Color3.new(0, 0, 0)
+clr.BorderColor3 = Color3.new(0, 0, 0)
+clr.BorderSizePixel = 1
+clr.Text = "Clear"
+clr.BackgroundTransparency = 0 
+clr.TextColor3 = Color3.new(255, 255, 255)
+clr.Font = Enum.Font.Code
+clr.Parent = frame
+clr.TextScaled = true
+
+
+local att = Instance.new("TextButton")
+att.Size = UDim2.new(0.3, 0, 0.14, 0)
+att.Position = UDim2.new(0.5, 0, 0.82, 0)
+att.BackgroundColor3 = Color3.new(0, 0, 0)
+att.BorderColor3 = Color3.new(0, 0, 0)
+att.BorderSizePixel = 1
+att.Text = "Attach"
+att.BackgroundTransparency = 0 
+att.TextColor3 = Color3.new(255, 255, 255)
+att.Font = Enum.Font.Code
+att.Parent = frame
+att.TextScaled = true
