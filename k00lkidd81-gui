@@ -1,0 +1,339 @@
+local gui = Instance.new("ScreenGui", game.CoreGui)
+
+
+
+
+local main = Instance.new("Frame")
+main.Size = UDim2.new(0.4, 0, 0.7, 0)
+main.Position = UDim2.new(0.3, 0, 0.24, 0)
+main.BackgroundColor3 = Color3.new(0, 0, 0)
+main.BorderColor3 = Color3.new(0, 1, 0)
+main.BorderSizePixel = 3
+main.Active = true
+main.BackgroundTransparency = 0 
+main.Draggable = true
+main.Parent = gui
+
+
+
+
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(1.0, 0, 0.08, 0)
+label.Position = UDim2.new(0.0, 0, 0.0, 0)
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+label.BorderColor3 = Color3.new(0, 1, 0)
+label.BorderSizePixel = 3
+label.Text = "k00lkidd81 gui v5 by NotaPlayer214"
+label.BackgroundTransparency = 0 
+label.TextColor3 = Color3.new(255, 255, 255)
+label.Font = Enum.Font.SourceSansBold
+label.Parent = main
+label.TextScaled = true
+
+local b1 = Instance.new("TextButton")
+b1.Size = UDim2.new(0.3, 0, 0.09, 0)
+b1.Position = UDim2.new(0.0, 0, 0.14, 0)
+b1.BackgroundColor3 = Color3.new(0, 0, 0)
+b1.BorderColor3 = Color3.new(0, 1, 0)
+b1.BorderSizePixel = 3
+b1.Text = "Set Sky"
+b1.BackgroundTransparency = 0 
+b1.TextColor3 = Color3.new(255, 255, 255)
+b1.Font = Enum.Font.SourceSansBold
+b1.Parent = main
+b1.TextScaled = true
+b1.MouseButton1Down:Connect(function()
+   game.Lighting:ClearAllChildren()
+wait(0.3)
+  
+  local newSkyboxId = "rbxassetid://18782375225"
+local skyboxProps = {"SkyboxBk", "SkyboxDn", "SkyboxFt", "SkyboxLf", "SkyboxRt", "SkyboxUp"}
+
+local sky = game.Lighting:FindFirstChildOfClass("Sky") or Instance.new("Sky", game.Lighting)
+for _, prop in ipairs(skyboxProps) do sky[prop] = newSkyboxId 
+  
+end
+end)
+
+
+local dc = Instance.new("TextButton")
+dc.Size = UDim2.new(0.3, 0, 0.09, 0)
+dc.Position = UDim2.new(0.35, 0, 0.14, 0)
+dc.BackgroundColor3 = Color3.new(0, 0, 0)
+dc.BorderColor3 = Color3.new(0, 1, 0)
+dc.BorderSizePixel = 3
+dc.Text = "Set Decal"
+dc.BackgroundTransparency = 0 
+dc.TextColor3 = Color3.new(255, 255, 255)
+dc.Font = Enum.Font.SourceSansBold
+dc.Parent = main
+dc.TextScaled = true
+dc.MouseButton1Down:Connect(function()
+local ID =18782375225
+function spamDecal(v)
+    if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..Id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+function decalspam(id) --use this function, not the one on top
+    Id = id
+    for i,v in pairs(game.Workspace:GetChildren()) do
+        if v:IsA("Part") then
+        for i=0, 5 do
+            D = Instance.new("Decal")
+            D.Name = "MYDECALHUE"
+            D.Face = i
+            D.Parent = v
+            D.Texture = ("rbxassetid://"..id)
+        end
+    else
+        if v:IsA("Model") then
+            for a,b in pairs(v:GetChildren()) do
+                spamDecal(b)
+            end
+        end
+    end
+end
+end
+ 
+decalspam(ID)
+  
+  
+end)
+
+local pt = Instance.new("TextButton")
+pt.Size = UDim2.new(0.3, 0, 0.09, 0)
+pt.Position = UDim2.new(0.7, 0, 0.14, 0)
+pt.BackgroundColor3 = Color3.new(0, 0, 0)
+pt.BorderColor3 = Color3.new(0, 1, 0)
+pt.BorderSizePixel = 3
+pt.Text = "Particles Spam"
+pt.BackgroundTransparency = 0 
+pt.TextColor3 = Color3.new(255, 255, 255)
+pt.Font = Enum.Font.SourceSansBold
+pt.Parent = main
+pt.TextScaled = true
+pt.MouseButton1Down:Connect(function()
+  
+
+-- Particles
+
+local playerLeaderstats = {}
+for i, v in pairs(game.Players:GetChildren()) do
+    table.insert(playerLeaderstats, v)
+end
+
+for i, v in pairs(playerLeaderstats) do
+    if v.Character and v.Character:FindFirstChild("Head") then
+        local pe = Instance.new("ParticleEmitter", v.Character.Head)
+        pe.Texture = "rbxassetid://18782375225"
+        pe.VelocitySpread = 550
+        pe.Size = NumberSequence.new(4)
+        pe.RotSpeed = NumberRange.new(38)
+        pe.Rate = 70
+       local se = Instance.new("ParticleEmitter", v.Character.Head)
+        se.Texture = "rbxassetid://18782375225"
+        se.VelocitySpread = 550
+        se.Size = NumberSequence.new(4)
+        se.RotSpeed = NumberRange.new(38)
+        se.Rate = 70
+       local fe = Instance.new("ParticleEmitter", v.Character.Head)
+        fe.Texture = "rbxassetid://18782375225"
+        fe.VelocitySpread = 550
+        fe.Size = NumberSequence.new(4)
+        fe.RotSpeed = NumberRange.new(38)
+        fe.Rate = 70
+    end
+end
+
+
+end)
+
+local ht = Instance.new("TextButton")
+ht.Size = UDim2.new(0.3, 0, 0.09, 0)
+ht.Position = UDim2.new(0.00, 0, 0.27, 0)
+ht.BackgroundColor3 = Color3.new(0, 0, 0)
+ht.BorderColor3 = Color3.new(0, 1, 0)
+ht.BorderSizePixel = 3
+ht.Text = "Hint"
+ht.BackgroundTransparency = 0 
+ht.TextColor3 = Color3.new(255, 255, 255)
+ht.Font = Enum.Font.SourceSansBold
+ht.Parent = main
+ht.TextScaled = true
+ht.MouseButton1Down:Connect(function()
+local h = Instance.new("Hint", game.Workspace)
+  h.Text = "k00lkidd81 was here"
+end)
+
+local sd = Instance.new("TextButton")
+sd.Size = UDim2.new(0.3, 0, 0.09, 0)
+sd.Position = UDim2.new(0.35, 0, 0.27, 0)
+sd.BackgroundColor3 = Color3.new(0, 0, 0)
+sd.BorderColor3 = Color3.new(0, 1, 0)
+sd.BorderSizePixel = 3
+sd.Text = "Shutdown"
+sd.BackgroundTransparency = 0 
+sd.TextColor3 = Color3.new(255, 255, 255)
+sd.Font = Enum.Font.SourceSansBold
+sd.Parent = main
+sd.TextScaled = true
+sd.MouseButton1Down:Connect(function()
+  for _, plr in pairs(game.Players:GetChildren()) do
+    if plr.Character then
+  plr.Character:Destroy()
+    end
+  end
+end)
+    
+local fr = Instance.new("TextButton")
+fr.Size = UDim2.new(0.3, 0, 0.09, 0)
+fr.Position = UDim2.new(0.7, 0, 0.27, 0)
+fr.BackgroundColor3 = Color3.new(0, 0, 0)
+fr.BorderColor3 = Color3.new(0, 1, 0)
+fr.BorderSizePixel = 3
+fr.Text = "Fire Spam"
+fr.BackgroundTransparency = 0 
+fr.TextColor3 = Color3.new(255, 255, 255)
+fr.Font = Enum.Font.SourceSansBold
+fr.Parent = main
+fr.TextScaled = true
+fr.MouseButton1Down:Connect(function()
+setOnFireAndAddEffects()
+    local fireColor = Color3.new(0, 1, 0) -- Green fire color
+    local textColor = Color3.new(0, 1, 0) -- Green text color
+    
+    -- Set all parts on fire and add green effects
+    for _, part in pairs(workspace:GetDescendants()) do
+        if part:IsA("BasePart") then
+            local fire = Instance.new("Fire")
+            fire.Color = fireColor
+            fire.SecondaryColor = fireColor
+            fire.Size = 50
+            fire.Parent = part
+           local effect = Instance.new("SelectionBox")
+            effect.Adornee = part
+            effect.Color3 = textColor
+            effect.Parent = part
+        end
+    end
+    
+    -- Set all players on fire and add green effects
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player.Character then
+            for _, part in pairs(player.Character:GetChildren()) do
+                if part:IsA("BasePart") then
+                    local fire = Instance.new("Fire")
+                    fire.Color = fireColor
+                    fire.SecondaryColor = fireColor
+                    fire.Size = 50
+            fire.Parent = part
+            
+            local effect = Instance.new("SelectionBox")
+            effect.Adornee = part
+            effect.Color3 = textColor
+            effect.Parent = part
+        end
+    end
+    
+    -- Set all players on fire and add green effects
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player.Character then
+            for _, part in pairs(player.Character:GetChildren()) do
+                if part:IsA("BasePart") then
+                    local fire = Instance.new("Fire")
+                    fire.Color = fireColor
+                   fire.SecondaryColor = fireColor
+                    fire.Size = 50
+                    fire.Parent = part
+                    
+                    local effect = Instance.new("SelectionBox")
+                    effect.Adornee = part
+                    effect.Color3 = textColor
+                    effect.Parent = part
+                end
+            end
+        end
+    end
+    
+    -- Display server-wide message
+    local message = Instance.new("Message")
+    message.Text = "Team k00lkidd81 join Today!"
+    message.TextColor3 = textColor
+    message.Parent = workspace
+    wait(5)
+    message:Destroy()
+        end
+end
+
+end)
+
+local ot = Instance.new("ScrollingFrame")
+ot.Size = UDim2.new(0.77, 0, 0.5, 0)
+ot.Position = UDim2.new(0.1, 0, 0.5, 0)
+ot.BackgroundColor3 = Color3.new(1, 1, 1)
+ot.BorderColor3 = Color3.new(0, 1, 0)
+ot.BorderSizePixel = 3
+ot.Parent = main
+ot.BackgroundTransparency = 1
+
+
+local cg = Instance.new("TextButton")
+cg.Size = UDim2.new(1.0, 0, 0.1, 0)
+cg.Position = UDim2.new(0.01, 0, 0.1, 0)
+cg.BackgroundColor3 = Color3.new(0, 0, 0)
+cg.BorderColor3 = Color3.new(1, 0, 0)
+cg.BorderSizePixel = 3
+cg.Text = "c00lgui cryptic"
+cg.BackgroundTransparency = 0 
+cg.TextColor3 = Color3.new(255, 255, 255)
+cg.Font = Enum.Font.SourceSansBold
+cg.Parent = ot
+cg.TextScaled = true
+cg.MouseButton1Down:Connect(function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/main/cgui_cryptic.lua"))("NotaPlayer214_dont_skid_female_dog")
+end)
+local l1 = Instance.new("TextLabel")
+l1.Size = UDim2.new(0.99, 0, 0.07, 0)
+l1.Position = UDim2.new(0.01, 0, 0.01, 0)
+l1.BackgroundColor3 = Color3.new(0, 0, 0)
+l1.BorderColor3 = Color3.new(0, 1, 0)
+l1.BorderSizePixel = 3
+l1.Text = "Other Guis:"
+l1.BackgroundTransparency = 0 
+l1.TextColor3 = Color3.new(255, 255, 255)
+l1.Font = Enum.Font.SourceSansBold
+l1.Parent = ot
+l1.TextScaled = true
+
+
+
+local ngui = Instance.new("ScreenGui",game.CoreGui)
+
+local x = Instance.new("TextButton")
+x.Size = UDim2.new(0.5, 0, 0.1, 0)
+x.Position = UDim2.new(0.0, 0, -0.4, 0)
+x.BackgroundColor3 = Color3.new(0, 0, 0)
+x.BorderColor3 = Color3.new(0, 1, 0)
+x.BorderSizePixel = 3
+x.Text = "Close"
+x.BackgroundTransparency = 0 
+x.TextColor3 = Color3.new(255, 255, 255)
+x.Font = Enum.Font.SourceSans
+x.Parent = ngui
+x.TextScaled = true
+x.MouseButton1Down:Connect(function()
+  gui.Enabled = not gui.Enabled
+end)
