@@ -1,6 +1,6 @@
 
 
--- scripts by me ui by k00pkidd, and guy that transformed the gui into fe script.
+-- scripts not by me, ui by k00pkidd, and guy that transformed the gui into "fe" script? bro????
  
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("ImageLabel")
