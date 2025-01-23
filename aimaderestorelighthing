@@ -1,0 +1,37 @@
+local Lighting = game:GetService("Lighting")
+
+-- Salvar o estado inicial do Lighting
+local originalSettings = {
+    Properties = {},
+    Children = {},
+}
+
+-- Salvar as propriedades
+for _, property in pairs({"Ambient", "Brightness", "ClockTime", "FogEnd", "FogStart", "OutdoorAmbient", "ShadowSoftness", "Technology"}) do
+    originalSettings.Properties[property] = Lighting[property]
+end
+
+-- Salvar os filhos
+for _, child in pairs(Lighting:GetChildren()) do
+    originalSettings.Children[child.Name] = child:Clone()
+end
+
+-- Função para restaurar o Lighting
+function restoreLighting()
+    -- Restaurar as propriedades
+    for property, value in pairs(originalSettings.Properties) do
+        Lighting[property] = value
+    end
+
+    -- Remover os filhos atuais
+    for _, child in pairs(Lighting:GetChildren()) do
+        child:Destroy()
+    end
+
+    -- Restaurar os filhos originais
+    for _, clone in pairs(originalSettings.Children) do
+        clone:Clone().Parent = Lighting
+    end
+
+    print("Lighting restaurado para o estado original!")
+end
