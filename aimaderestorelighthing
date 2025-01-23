@@ -1,25 +1,22 @@
 local Lighting = game:GetService("Lighting")
 
--- Salvar o estado inicial do Lighting
-local originalSettings = {
-    Properties = {},
-    Children = {},
+-- Valores padrão do Lighting no Roblox Studio
+local defaultProperties = {
+    Ambient = Color3.new(0, 0, 0),
+    Brightness = 2,
+    ClockTime = 14,
+    FogEnd = 100000,
+    FogStart = 0,
+    OutdoorAmbient = Color3.new(127/255, 127/255, 127/255),
+    ShadowSoftness = 0.2,
+    Technology = Enum.Technology.Compatibility,
+    ExposureCompensation = 0
 }
 
--- Salvar as propriedades
-for _, property in pairs({"Ambient", "Brightness", "ClockTime", "FogEnd", "FogStart", "OutdoorAmbient", "ShadowSoftness", "Technology"}) do
-    originalSettings.Properties[property] = Lighting[property]
-end
-
--- Salvar os filhos
-for _, child in pairs(Lighting:GetChildren()) do
-    originalSettings.Children[child.Name] = child:Clone()
-end
-
 -- Função para restaurar o Lighting
-function restoreLighting()
+local function restoreToDefault()
     -- Restaurar as propriedades
-    for property, value in pairs(originalSettings.Properties) do
+    for property, value in pairs(defaultProperties) do
         Lighting[property] = value
     end
 
@@ -28,10 +25,8 @@ function restoreLighting()
         child:Destroy()
     end
 
-    -- Restaurar os filhos originais
-    for _, clone in pairs(originalSettings.Children) do
-        clone:Clone().Parent = Lighting
-    end
-
-    print("Lighting restaurado para o estado original!")
+    print("Lighting restaurado para os valores padrão do Roblox Studio!")
 end
+
+-- Exemplo de uso
+restoreToDefault() -- Chama a função para restaurar
