@@ -1,0 +1,139 @@
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "FEFighterGUI"
+screenGui.Parent = game.CoreGui
+
+-- Create the Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 200, 0, 120)
+frame.Position = UDim2.new(0.5, -100, 0.5, -60)
+frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+frame.BorderSizePixel = 2
+frame.Active = true
+frame.Draggable = true
+frame.Parent = screenGui
+
+-- Title Label
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 25)
+title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+title.BorderSizePixel = 2
+title.Text = "FE Fighter"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.GothamBold
+title.TextScaled = true
+title.Parent = frame
+
+-- Execute Button
+local executeButton = Instance.new("TextButton")
+executeButton.Size = UDim2.new(0.8, 0, 0.25, 0)
+executeButton.Position = UDim2.new(0.1, 0, 0.35, 0)
+executeButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+executeButton.BorderSizePixel = 2
+executeButton.Text = "Run FE Fighter"
+executeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+executeButton.Font = Enum.Font.GothamBold
+executeButton.TextScaled = true
+executeButton.Parent = frame
+
+-- Stop Button
+local stopButton = Instance.new("TextButton")
+stopButton.Size = UDim2.new(0.8, 0, 0.25, 0)
+stopButton.Position = UDim2.new(0.1, 0, 0.65, 0)
+stopButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+stopButton.BorderSizePixel = 2
+stopButton.Text = "Stop Anim"
+stopButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+stopButton.Font = Enum.Font.GothamBold
+stopButton.TextScaled = true
+stopButton.Parent = frame
+
+-- State Variable
+local isRunning = false -- Tracks whether the FE Fighter script is running
+
+-- FE Fighter Script
+local feFighterScript = [[
+    -- Replace with your FE Fighter script
+    loadstring(game:HttpGet("https://pastefy.app/E6ST33gy/raw"))()
+]]
+
+-- Execute FE Fighter
+executeButton.MouseButton1Click:Connect(function()
+    if not isRunning then
+        isRunning = true
+        executeButton.Text = "Running..."
+        executeButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+        executeButton.Active = false -- Disable button
+        
+        -- Try executing the script
+        local success, err = pcall(function()
+            loadstring(feFighterScript)()
+        end)
+
+        if not success then
+            warn("Error executing FE Fighter script: " .. err)
+            isRunning = false
+            executeButton.Text = "Run FE Fighter"
+            executeButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+            executeButton.Active = true
+        end
+    end
+end)
+
+-- Stop Animations
+stopButton.MouseButton1Click:Connect(function()
+    -- Remove tools
+    for _, toolName in ipairs({"Punch", "Defense"}) do
+        local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(toolName)
+        if tool then
+            tool:Destroy()
+        end
+        local characterTool = game.Players.LocalPlayer.Character:FindFirstChild(toolName)
+        if characterTool then
+            characterTool:Destroy()
+        end
+    end
+
+    -- Stop animations
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        local humanoid = character:FindFirstChild("Humanoid")
+        if humanoid then
+            local animator = humanoid:FindFirstChild("Animator")
+            if animator then
+                for _, track in ipairs(animator:GetPlayingAnimationTracks()) do
+                    track.Looped = false
+                    track:Stop(0)
+                end
+            end
+        end
+
+        -- Disconnect animation connections
+        local connections = getconnections(game:GetService("RunService").Stepped)
+        for _, connection in ipairs(connections) do
+            connection:Disable()
+        end
+
+        -- Remove effects
+        for _, obj in ipairs(character:GetDescendants()) do
+            if obj:IsA("Highlight") or obj:IsA("Part") or obj:IsA("Sound") then
+                obj:Destroy()
+            end
+        end
+    end
+
+    -- Re-enable Execute Button
+    isRunning = false
+    executeButton.Text = "Run FE Fighter"
+    executeButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+    executeButton.Active = true
+end)
+
+-- Notification
+game.StarterGui:SetCore("SendNotification", {
+    Title = "YT: G10: SourceCode Leaked By NotaPlayer214",
+    Text = "Stop Anim makes you reset!",
+    Duration = 7,
+    Button1 = "Alright"
+})
+
