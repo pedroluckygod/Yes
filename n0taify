@@ -288,7 +288,7 @@ nootnoot.MouseButton1Down:connect(function()
             end
         end
     end
-    Sky("74239552782487")
+    Sky("18512422251")
 
     -----------------------------------
 
@@ -563,7 +563,7 @@ nootnoot.MouseButton1Down:connect(function()
             end
         end 
     end
-    spam("74239552782487")
+    spam("18512422251")
 
     -----------
 end)
