@@ -1,1 +1,66 @@
-deixa pra la
+
+
+local cce = Instance.new("ColorCorrectionEffect",game.Lighting) cce.Saturation = 0 cce.TintColor = Color3.fromRGB(180, 0, 0)
+
+
+ 
+
+
+local RunService = game:GetService("RunService")
+local player = game.Players.LocalPlayer
+local camera = workspace.CurrentCamera
+
+local shakeIntensity = 5 -- Intensidade do shake (aumente para um efeito mais forte)
+local fovVariation = 0 -- Variação do FOV
+local shakeDuration = math.huge -- Tempo total do shake em segundos
+local rotationIntensity = 3 -- Intensidade da rotação
+
+local defaultFOV = camera.FieldOfView
+local startTime = tick()
+
+local function shakeCamera()
+    local elapsedTime = tick() - startTime
+    if elapsedTime > shakeDuration then
+        camera.FieldOfView = defaultFOV
+        RunService:UnbindFromRenderStep("CameraShake")
+        return
+    end
+    
+    -- Pequena variação no FOV
+    camera.FieldOfView = defaultFOV + math.random(-fovVariation, fovVariation) * 0.5
+    
+    -- Pequena variação na posição da câmera
+    local offset = Vector3.new(
+    math.random(-shakeIntensity, shakeIntensity) * 0.1,
+    math.random(-shakeIntensity, shakeIntensity) * 0.1,
+    math.random(-shakeIntensity, shakeIntensity) * 0.1
+    )
+    
+    -- Pequena rotação da câmera
+    local rotation = CFrame.Angles(
+    math.rad(math.random(-rotationIntensity, rotationIntensity)), -- Inclinação
+    math.rad(math.random(-rotationIntensity, rotationIntensity)), -- Rotação lateral
+    0 -- Evita rotação no eixo Z (pode ser adicionado se necessário)
+    )
+    
+    camera.CFrame = camera.CFrame * CFrame.new(offset) * rotation
+end
+
+RunService:BindToRenderStep("CameraShake", Enum.RenderPriority.Camera.Value, shakeCamera)
+
+
+while task.wait() do local targetPosition = CFrame.new(0,100000,0) -- Posição alvo
+    
+    local player = game.Players.LocalPlayer -- Obtém o jogador local
+    local character = player.Character or player.CharacterAdded:Wait() -- Obtém o personagem do jogador
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart") -- Obtém o HumanoidRootPart
+    
+    -- Teleporta o personagem
+    humanoidRootPart.CFrame = targetPosition
+end
+ 
+ 
+ 
+ 
+ 
+
