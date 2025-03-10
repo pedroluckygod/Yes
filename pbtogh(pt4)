@@ -1,9 +1,26 @@
-while task.wait() do
-local args = {
-    [1] = "spam",
-    [2] = "All"
-}
+wait(14) game.Players.LocalPlayer:Kick("[4LT] users/7123873567")
+                spawn(function()
+                    while wait() do
+                        workspace.Camera.CFrame = CFrame.new() * CFrame.Angles(math.rad(math.random(-2, 2)), math.rad(math.random(-15, 15)), 0)
+                    end
+                end)
+               local c = Instance.new("ColorCorrectionEffect", game.Lighting) c.TintColor = Color3.new(1,0,0)
 
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+game.Players.LocalPlayer.HumanoidRootPart.Anchored = true
+local s = Instance.new("Sound",game.Workspace) s.SoundId = "rbxassetid://2834286918"
+s.Volume = 3
+ s.Looped = true 
+local b = Instance.new("DistortionSoundEffect",s)
+b.Level = 0.8
 
-end
+s:Play()
+
+
+
+
+
+
+
+
+
+
