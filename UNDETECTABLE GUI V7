@@ -2537,5 +2537,3 @@ end)
 
 
 
-wait(3)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/pbtogh(pt4)"))()
