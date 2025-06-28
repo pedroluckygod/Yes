@@ -1,0 +1,104 @@
+local StarterGui = game:GetService("StarterGui")
+
+StarterGui:SetCore("SendNotification", {
+    Title = "Message",
+    Text = "Set Prefix to ';' or modify the script!",
+    Duration = 5
+})
+
+
+
+
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "patrickGui"
+gui.Parent = game.CoreGui
+
+--///patrick gui maker///--
+
+
+
+
+
+
+
+
+
+local Main = Instance.new("Frame")
+Main.Size = UDim2.new(0.3, 0, 0.5, 0)
+Main.Position = UDim2.new(0.31, 0, 0.31, 0)
+Main.BackgroundColor3 = Color3.new(0,0,0)
+Main.BackgroundTransparency = 0 
+Main.Draggable = true
+Main.Parent = gui
+Main.Active = true
+
+local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0, 5)
+Corner.Parent = Main
+
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(0.3, 0, 0.2, 0)
+Title.Position = UDim2.new(0.07, 0, 0.01, 0)
+Title.BackgroundColor3 = Color3.new(0, 0, 0)
+Title.BorderColor3 = Color3.new(0, 0, 0)
+Title.BorderSizePixel = 1
+Title.Text = "ProjectCMD V2"
+Title.BackgroundTransparency = 1
+Title.TextColor3 = Color3.new(255, 255, 255)
+Title.Font = Enum.Font.SourceSansBold
+Title.Parent = Main
+Title.TextSize = 20
+
+local Box = Instance.new("TextBox")
+Box.Size = UDim2.new(1, 0, 0.6, 0)
+Box.Position = UDim2.new(0.0, 0, 0.33, 0)
+Box.BackgroundColor3 = Color3.new(0, 0, 0)
+Box.BorderColor3 = Color3.new(1, 0, 0)
+Box.BorderSizePixel = 1
+Box.PlaceholderText = "print('Notaplayer Iz Back!!?!1')"
+Box.TextColor3 = Color3.new(255, 255, 255)
+Box.BackgroundTransparency = 0
+Box.Font = Enum.Font.Code
+Box.TextSize = 15
+Box.Parent = Main
+Box.ClearTextOnFocus = false
+
+
+local Send = Instance.new("ImageButton")
+Send.Size = UDim2.new(0.17, 0, 0.2, 0)
+Send.Position = UDim2.new(0.8, 0, 0.1, 0)
+Send.BackgroundColor3 = Color3.new(0, 0, 0)
+Send.ImageColor3 = Color3.new(1, 0, 0)
+Send.Image = "rbxassetid://18780678633"
+Send.ImageTransparency = 0.5
+Send.Parent = Main
+Send.BackgroundTransparency = 1
+Send.MouseButton1Down:Connect(function()
+  
+  task.spawn(function()
+    game:GetService("ReplicatedStorage").HDAdminClient.Signals.RequestCommand:InvokeServer(";".. Box.Text)
+  end)
+  wait(0.1)
+  task.spawn(function()
+game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";".. Box.Text)
+  end)
+end)
+
+
+
+local Delete = Instance.new("ImageButton")
+Delete.Size = UDim2.new(0.16, 0, 0.2, 0)
+Delete.Position = UDim2.new(0.62, 0, 0.1, 0)
+Delete.BackgroundColor3 = Color3.new(0, 0, 0)
+Delete.ImageColor3 = Color3.new(1, 0, 0)
+Delete.Image = "rbxassetid://98367319670729"
+Delete.ImageTransparency = 0
+Delete.Parent = Main
+Delete.BackgroundTransparency = 1
+Delete.MouseButton1Down:Connect(function()
+  Box.Text = ""
+end)
+
+
