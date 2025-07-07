@@ -63,9 +63,7 @@ ScanBT.TextColor3 = Color3.new(0,0,0)
 ScanBT.Font = Enum.Font.SourceSansBold
 ScanBT.Parent = ScanFrame
 ScanBT.TextSize = 17
-ScanBT.MouseButton1Down:Connect(function()
-  SAV()
-end)
+
 
 local SBC = Instance.new("UICorner")
 SBC.CornerRadius = UDim.new(0, 5)
@@ -251,7 +249,9 @@ function SAV()
 	end
 end
 
-  --  Code
+ ScanBT.MouseButton1Down:Connect(function()
+  SAV()
+end)
 
 
 
@@ -264,7 +264,6 @@ end
 
 
 
--- sep
 
 
 
