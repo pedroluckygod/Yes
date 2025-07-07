@@ -1,3 +1,10 @@
+local TweenService = game:GetService("TweenService")
+local targetSize = UDim2.new(0.3, 0, 0.5, 0)
+local tweenInfo = TweenInfo.new(0.4)
+
+
+
+
 
 
 
@@ -22,7 +29,7 @@ gui.Parent = game.CoreGui
 local remote = nil
 
 local ScanFrame = Instance.new("Frame")
-ScanFrame.Size = UDim2.new(0.3, 0, 0.5, 0)
+ScanFrame.Size = UDim2.new(0.1, 0, 0.1, 0)
 ScanFrame.Position = UDim2.new(0.3, 0, 0.3, 0)
 ScanFrame.BackgroundColor3 = Color3.new(0,0,0)
 ScanFrame.BorderColor3 = Color3.new(0, 0, 0)
@@ -32,6 +39,8 @@ ScanFrame.BackgroundTransparency = 0
 ScanFrame.Draggable = true
 ScanFrame.Parent = gui
 
+local tween = TweenService:Create(ScanFrame, tweenInfo, {Size = targetSize})
+tween:Play()
 
 
 
@@ -63,13 +72,13 @@ ScanBT.TextColor3 = Color3.new(0,0,0)
 ScanBT.Font = Enum.Font.SourceSansBold
 ScanBT.Parent = ScanFrame
 ScanBT.TextSize = 17
-
+ScanBT.MouseButton1Down:Connect(function()
+  SAV()
+end)
 
 local SBC = Instance.new("UICorner")
 SBC.CornerRadius = UDim.new(0, 5)
 SBC.Parent = ScanBT
-
-
 
 
 local frame = Instance.new("Frame")
@@ -248,22 +257,22 @@ function SAV()
 	end
 end
 
-ScanBT.MouseButton1Down:Connect(function()
-  SAV()
-end)
+  --  Code
 
 
 
 
 
 
+wait(1.7)
+tween:Play()
 
 
 
 
 
 
-
+-- sep
 
 
 
