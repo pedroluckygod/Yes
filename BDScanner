@@ -80,6 +80,9 @@ local SBC = Instance.new("UICorner")
 SBC.CornerRadius = UDim.new(0, 5)
 SBC.Parent = ScanBT
 
+wait(1.7)
+tween:Play()
+
 
 local frame = Instance.new("Frame")
 frame.Size = UDim2.new(0.3, 0, 0.5, 0)
@@ -264,8 +267,6 @@ end
 
 
 
-wait(1.7)
-tween:Play()
 
 
 
