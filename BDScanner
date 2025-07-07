@@ -69,8 +69,7 @@ local SBC = Instance.new("UICorner")
 SBC.CornerRadius = UDim.new(0, 5)
 SBC.Parent = ScanBT
 
-wait(1.7)
-tween:Play()
+
 
 
 local frame = Instance.new("Frame")
@@ -249,9 +248,10 @@ function SAV()
 	end
 end
 
- ScanBT.MouseButton1Down:Connect(function()
+ScanBT.MouseButton1Down:Connect(function()
   SAV()
 end)
+
 
 
 
