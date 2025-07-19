@@ -7,7 +7,7 @@ gui.Parent = game.CoreGui
 --///patrick gui maker///--
 
 
-local chars = {"NotaPlayer214","K00lkidd81"}
+local chars = {" NotaPlayer214"," K00lkidd81"}
 
 function hd(cmd)
 game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(cmd)
