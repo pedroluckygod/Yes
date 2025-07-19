@@ -72,7 +72,7 @@ bt1.TextColor3 = Color3.new(255, 255, 255)
 bt1.Font = Enum.Font.SourceSans
 bt1.Parent = SF
 bt1.TextSize = 20
-bt1.MouseButton1Down:Connect(function()
+bt1.MouseButton1Click:Connect(function()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/f3x_n0ta"))()
 end)
 
@@ -89,7 +89,7 @@ bt2.TextColor3 = Color3.new(255, 255, 255)
 bt2.Font = Enum.Font.SourceSans
 bt2.TextSize = 17
 bt2.Parent = SF
-bt2.MouseButton1Down:Connect(function()
+bt2.MouseButton1Click:Connect(function()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/f3xn0tadecals"))()
 end)
 
@@ -105,7 +105,7 @@ bt3.TextColor3 = Color3.new(255, 255, 255)
 bt3.Font = Enum.Font.SourceSans
 bt3.TextSize = 20
 bt3.Parent = SF
-bt3.MouseButton1Down:Connect(function()
+bt3.MouseButton1Click:Connect(function()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/f3x_81"))()
 end)
 
@@ -121,7 +121,7 @@ bt4.TextColor3 = Color3.new(255, 255, 255)
 bt4.Font = Enum.Font.SourceSans
 bt4.TextSize = 20
 bt4.Parent = SF
-bt4.MouseButton1Down:Connect(function()
+bt4.MouseButton1Click:Connect(function()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/ds_81"))()
 end)
 
@@ -191,19 +191,29 @@ bt9.Font = Enum.Font.SourceSans
 bt9.TextSize = 20
 bt9.Parent = SF
 
+local N0ta = Instance.new("ImageLabel")
+N0ta.Size = UDim2.new(0.5, 0, 0.12, 0)
+N0ta.Position = UDim2.new(0.33, 0, 0.19, 0)
+N0ta.BackgroundColor3 = Color3.new(0, 0, 0)
+N0ta.Image = "rbxassetid://71429778807221"
+N0ta.Parent = SF
+ 
+
 local bt10 = Instance.new("TextButton")
 bt10.Size = UDim2.new(0.21, 0, 0.07, 0)
 bt10.Position = UDim2.new(0.03, 0, 0.34, 0)
 bt10.BackgroundColor3 = Color3.new(0, 0, 0)
 bt10.BorderColor3 = Color3.new(1,1,1)
 bt10.BorderSizePixel = 1
-bt10.Text = "Text"
+bt10.Text = "Btools"
 bt10.BackgroundTransparency = 0
 bt10.TextColor3 = Color3.new(255, 255, 255)
 bt10.Font = Enum.Font.SourceSans
 bt10.TextSize = 20
 bt10.Parent = SF
-
+bt10.MouseButton1Click:Connect(function()
+game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";btools")
+end)
 local bt11 = Instance.new("TextButton")
 bt11.Size = UDim2.new(0.21, 0, 0.07, 0)
 bt11.Position = UDim2.new(0.27, 0, 0.34, 0)
