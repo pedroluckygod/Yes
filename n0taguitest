@@ -440,7 +440,7 @@ bt27.TextColor3 = Color3.new(255, 255, 255)
 bt27.Font = Enum.Font.SourceSans
 bt27.TextSize = 20
 bt27.Parent = SF
-bt2.MouseButton1Click:Connect(function()
+bt27.MouseButton1Click:Connect(function()
   game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";volume inf")
 end)
 
