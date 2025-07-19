@@ -7,7 +7,7 @@ gui.Parent = game.CoreGui
 --///patrick gui maker///--
 
 
-
+local chars = {"NotaPlayer214","K00lkidd81"}
 
 function hd(cmd)
 game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(cmd)
@@ -164,12 +164,15 @@ bt7.Position = UDim2.new(0.51, 0, 0.1, 0)
 bt7.BackgroundColor3 = Color3.new(0, 0, 0)
 bt7.BorderColor3 = Color3.new(1,1,1)
 bt7.BorderSizePixel = 1
-bt7.Text = "Text"
+bt7.Text = "Title"
 bt7.BackgroundTransparency = 0 
 bt7.TextColor3 = Color3.new(255, 255, 255)
 bt7.Font = Enum.Font.SourceSans
 bt7.TextSize = 20
 bt7.Parent = SF
+bt7.MouseButton1Down:Connect(function()
+  hd(";titleg all k00lkidd81 & NotaPlayer")
+end)
 
 local bt8 = Instance.new("TextButton")
 bt8.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -177,12 +180,17 @@ bt8.Position = UDim2.new(0.75, 0, 0.1, 0)
 bt8.BackgroundColor3 = Color3.new(0, 0, 0)
 bt8.BorderColor3 = Color3.new(1,1,1)
 bt8.BorderSizePixel = 1
-bt8.Text = "Text"
+bt8.Text = "Avatars"
 bt8.BackgroundTransparency = 0 
 bt8.TextColor3 = Color3.new(255, 255, 255)
 bt8.Font = Enum.Font.SourceSans
 bt8.TextSize = 20
 bt8.Parent = SF
+bt8.MouseButton1Click:Connect(function()
+  for i,v in pairs(game.Players:GetPlayers()) do
+  hd(";char ".. v.Name ..chars[math.random(1, #chars)])
+  end
+end)
 
 local bt9 = Instance.new("TextButton")
 bt9.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -421,7 +429,7 @@ bt26.Position = UDim2.new(0.03, 0, 0.70, 0)
 bt26.BackgroundColor3 = Color3.new(0, 0, 0)
 bt26.BorderColor3 = Color3.new(1,1,1)
 bt26.BorderSizePixel = 1
-bt26.Text = ""
+bt26.Text = "Empty"
 bt26.BackgroundTransparency = 0
 bt26.TextColor3 = Color3.new(255, 255, 255)
 bt26.Font = Enum.Font.SourceSans
