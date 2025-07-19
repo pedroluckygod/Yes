@@ -9,9 +9,9 @@ gui.Parent = game.CoreGui
 
 
 
-
-
-
+function hd(cmd)
+game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(cmd)
+end
 
 
 local Main = Instance.new("Frame")
@@ -421,7 +421,7 @@ bt26.Position = UDim2.new(0.03, 0, 0.70, 0)
 bt26.BackgroundColor3 = Color3.new(0, 0, 0)
 bt26.BorderColor3 = Color3.new(1,1,1)
 bt26.BorderSizePixel = 1
-bt26.Text = "Text"
+bt26.Text = ""
 bt26.BackgroundTransparency = 0
 bt26.TextColor3 = Color3.new(255, 255, 255)
 bt26.Font = Enum.Font.SourceSans
@@ -434,12 +434,15 @@ bt27.Position = UDim2.new(0.27, 0, 0.70, 0)
 bt27.BackgroundColor3 = Color3.new(0, 0, 0)
 bt27.BorderColor3 = Color3.new(1,1,1)
 bt27.BorderSizePixel = 1
-bt27.Text = "Text"
+bt27.Text = "BBoost"
 bt27.BackgroundTransparency = 0
 bt27.TextColor3 = Color3.new(255, 255, 255)
 bt27.Font = Enum.Font.SourceSans
 bt27.TextSize = 20
 bt27.Parent = SF
+bt2.MouseButton1Click:Connect(function()
+  game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";volume inf")
+end)
 
 local bt28 = Instance.new("TextButton")
 bt28.Size = UDim2.new(0.21, 0, 0.07, 0)
