@@ -132,12 +132,15 @@ bt5.Position = UDim2.new(0.03, 0, 0.1, 0)
 bt5.BackgroundColor3 = Color3.new(0, 0, 0)
 bt5.BorderColor3 = Color3.new(1,1,1)
 bt5.BorderSizePixel = 1
-bt5.Text = "Text"
+bt5.Text = "Hint"
 bt5.BackgroundTransparency = 0 
 bt5.TextColor3 = Color3.new(255, 255, 255)
 bt5.Font = Enum.Font.SourceSans
 bt5.TextSize = 20
 bt5.Parent = SF
+bt5.MouseButton1Click:Connect(function()
+  game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";hint OH NOESS11! THIS GAME WAS HAXZORED BY NOTAPLAYER214")
+end)
 
 local bt6 = Instance.new("TextButton")
 bt6.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -145,12 +148,15 @@ bt6.Position = UDim2.new(0.27, 0, 0.1, 0)
 bt6.BackgroundColor3 = Color3.new(0, 0, 0)
 bt6.BorderColor3 = Color3.new(1,1,1)
 bt6.BorderSizePixel = 1
-bt6.Text = "Text"
+bt6.Text = "Disco"
 bt6.BackgroundTransparency = 0 
 bt6.TextColor3 = Color3.new(255, 255, 255)
 bt6.Font = Enum.Font.SourceSans
 bt6.TextSize = 20
 bt6.Parent = SF
+bt6.MouseButton1Click:Connect(function()
+  game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";disco")
+end)
 
 local bt7 = Instance.new("TextButton")
 bt7.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -441,12 +447,15 @@ bt28.Position = UDim2.new(0.51, 0, 0.70, 0)
 bt28.BackgroundColor3 = Color3.new(0, 0, 0)
 bt28.BorderColor3 = Color3.new(1,1,1)
 bt28.BorderSizePixel = 1
-bt28.Text = "Text"
+bt28.Text = "Sound1"
 bt28.BackgroundTransparency = 0
 bt28.TextColor3 = Color3.new(255, 255, 255)
 bt28.Font = Enum.Font.SourceSans
 bt28.TextSize = 20
 bt28.Parent = SF
+bt28.MouseButton1Click:Connect(function()
+  game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";music 76578817848504")
+end)
 
 local bt29 = Instance.new("TextButton")
 bt29.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -454,12 +463,15 @@ bt29.Position = UDim2.new(0.75, 0, 0.70, 0)
 bt29.BackgroundColor3 = Color3.new(0, 0, 0)
 bt29.BorderColor3 = Color3.new(1,1,1)
 bt29.BorderSizePixel = 1
-bt29.Text = "Text"
+bt29.Text = "Sound2"
 bt29.BackgroundTransparency = 0
 bt29.TextColor3 = Color3.new(255, 255, 255)
 bt29.Font = Enum.Font.SourceSans
 bt29.TextSize = 20
 bt29.Parent = SF
+bt29.MouseButton1Click:Connect(function()
+  game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";music 114138177515042")
+end)
 
 local bt30 = Instance.new("TextButton")
 bt30.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -467,12 +479,15 @@ bt30.Position = UDim2.new(0.03, 0, 0.79, 0)
 bt30.BackgroundColor3 = Color3.new(0, 0, 0)
 bt30.BorderColor3 = Color3.new(1,1,1)
 bt30.BorderSizePixel = 1
-bt30.Text = "Text"
+bt30.Text = "Sound3"
 bt30.BackgroundTransparency = 0
 bt30.TextColor3 = Color3.new(255, 255, 255)
 bt30.Font = Enum.Font.SourceSans
 bt30.TextSize = 20
 bt30.Parent = SF
+bt30.MouseButton1Click:Connect(function()
+game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";music 123904595904910")
+end)
 
 local bt31 = Instance.new("TextButton")
 bt31.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -480,10 +495,12 @@ bt31.Position = UDim2.new(0.27, 0, 0.79, 0)
 bt31.BackgroundColor3 = Color3.new(0, 0, 0)
 bt31.BorderColor3 = Color3.new(1,1,1)
 bt31.BorderSizePixel = 1
-bt31.Text = "Text"
+bt31.Text = "Sound4"
 bt31.BackgroundTransparency = 0
 bt31.TextColor3 = Color3.new(255, 255, 255)
 bt31.Font = Enum.Font.SourceSans
 bt31.TextSize = 20
 bt31.Parent = SF
-
+bt31.MouseButton1Click:Connect(function()
+  game:GetService("ReplicatedStorage"):WaitForChild("HDAdminHDClient"):WaitForChild("Signals"):WaitForChild("RequestCommandSilent"):InvokeServer(";music 71590664026646")
+end)
