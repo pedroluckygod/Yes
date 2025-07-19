@@ -1,0 +1,479 @@
+
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "patrickGui"
+gui.Parent = game.CoreGui
+
+--///patrick gui maker///--
+
+
+
+
+
+
+
+
+
+local Main = Instance.new("Frame")
+Main.Size = UDim2.new(0.34, 0, 0.8, 0)
+Main.Position = UDim2.new(0.3, 0, 0.3, 0)
+Main.BackgroundColor3 = Color3.new(0,0,0)
+Main.BorderColor3 = Color3.new(1,1,1)
+Main.BorderSizePixel = 1
+Main.Active = true
+Main.BackgroundTransparency = 0 
+Main.Draggable = true
+Main.Parent = gui
+
+local Label = Instance.new("TextLabel")
+Label.Size = UDim2.new(0.7, 0, 0.2, 0)
+Label.Position = UDim2.new(0.15, 0, 0.0, 0)
+Label.BackgroundColor3 = Color3.new(0, 0, 0)
+Label.BorderColor3 = Color3.new(0, 0, 0)
+Label.BorderSizePixel = 0
+Label.Text = "N0tagui \n by NotaPlayer "
+Label.BackgroundTransparency = 1
+Label.TextColor3 = Color3.new(255, 255, 255)
+Label.Font = Enum.Font.SourceSansBold
+Label.Parent = Main
+Label.TextSize = 20
+
+local img = Instance.new("ImageLabel")
+img.Size = UDim2.new(0.14, 0, 0.11, 0)
+img.Position = UDim2.new(0.7, 0, 0.04, 0)
+img.BackgroundColor3 = Color3.new(0, 0, 0)
+img.Image = "rbxassetid://18784610939"
+img.Parent = Main
+
+
+img.BackgroundTransparency = 0 
+
+
+
+local SF = Instance.new("ScrollingFrame")
+SF.Size = UDim2.new(0.9, 0, 0.8, 0)
+SF.Position = UDim2.new(0.05, 0, 0.18, 0)
+SF.BackgroundColor3 = Color3.fromRGB(33,33,33)
+SF.BorderColor3 = Color3.new(1,1,1)
+SF.BorderSizePixel = 2
+SF.Parent = Main
+
+
+
+local bt1 = Instance.new("TextButton")
+bt1.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt1.Position = UDim2.new(0.03, 0, 0.01, 0)
+bt1.BackgroundColor3 = Color3.new(0, 0, 0)
+bt1.BorderColor3 = Color3.new(1,1,1)
+bt1.BorderSizePixel = 1
+bt1.Text = "Skybox"
+bt1.BackgroundTransparency = 0 
+bt1.TextColor3 = Color3.new(255, 255, 255)
+bt1.Font = Enum.Font.SourceSans
+bt1.Parent = SF
+bt1.TextSize = 20
+bt1.MouseButton1Down:Connect(function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/f3x_n0ta"))()
+end)
+
+
+local bt2 = Instance.new("TextButton")
+bt2.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt2.Position = UDim2.new(0.27, 0, 0.01, 0)
+bt2.BackgroundColor3 = Color3.new(0, 0, 0)
+bt2.BorderColor3 = Color3.new(1,1,1)
+bt2.BorderSizePixel = 1
+bt2.Text = "DecalSpam"
+bt2.BackgroundTransparency = 0 
+bt2.TextColor3 = Color3.new(255, 255, 255)
+bt2.Font = Enum.Font.SourceSans
+bt2.TextSize = 17
+bt2.Parent = SF
+bt2.MouseButton1Down:Connect(function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/f3xn0tadecals"))()
+end)
+
+local bt3 = Instance.new("TextButton")
+bt3.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt3.Position = UDim2.new(0.51, 0, 0.01, 0)
+bt3.BackgroundColor3 = Color3.new(0, 0, 0)
+bt3.BorderColor3 = Color3.new(1,1,1)
+bt3.BorderSizePixel = 1
+bt3.Text = "k81 sky"
+bt3.BackgroundTransparency = 0 
+bt3.TextColor3 = Color3.new(255, 255, 255)
+bt3.Font = Enum.Font.SourceSans
+bt3.TextSize = 20
+bt3.Parent = SF
+bt3.MouseButton1Down:Connect(function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/f3x_81"))()
+end)
+
+local bt4 = Instance.new("TextButton")
+bt4.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt4.Position = UDim2.new(0.75, 0, 0.01, 0)
+bt4.BackgroundColor3 = Color3.new(0, 0, 0)
+bt4.BorderColor3 = Color3.new(1,1,1)
+bt4.BorderSizePixel = 1
+bt4.Text = "k81 dspam"
+bt4.BackgroundTransparency = 0 
+bt4.TextColor3 = Color3.new(255, 255, 255)
+bt4.Font = Enum.Font.SourceSans
+bt4.TextSize = 20
+bt4.Parent = SF
+bt4.MouseButton1Down:Connect(function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/ds_81"))()
+end)
+
+
+local bt5 = Instance.new("TextButton")
+bt5.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt5.Position = UDim2.new(0.03, 0, 0.1, 0)
+bt5.BackgroundColor3 = Color3.new(0, 0, 0)
+bt5.BorderColor3 = Color3.new(1,1,1)
+bt5.BorderSizePixel = 1
+bt5.Text = "Text"
+bt5.BackgroundTransparency = 0 
+bt5.TextColor3 = Color3.new(255, 255, 255)
+bt5.Font = Enum.Font.SourceSans
+bt5.TextSize = 20
+bt5.Parent = SF
+
+local bt6 = Instance.new("TextButton")
+bt6.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt6.Position = UDim2.new(0.27, 0, 0.1, 0)
+bt6.BackgroundColor3 = Color3.new(0, 0, 0)
+bt6.BorderColor3 = Color3.new(1,1,1)
+bt6.BorderSizePixel = 1
+bt6.Text = "Text"
+bt6.BackgroundTransparency = 0 
+bt6.TextColor3 = Color3.new(255, 255, 255)
+bt6.Font = Enum.Font.SourceSans
+bt6.TextSize = 20
+bt6.Parent = SF
+
+local bt7 = Instance.new("TextButton")
+bt7.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt7.Position = UDim2.new(0.51, 0, 0.1, 0)
+bt7.BackgroundColor3 = Color3.new(0, 0, 0)
+bt7.BorderColor3 = Color3.new(1,1,1)
+bt7.BorderSizePixel = 1
+bt7.Text = "Text"
+bt7.BackgroundTransparency = 0 
+bt7.TextColor3 = Color3.new(255, 255, 255)
+bt7.Font = Enum.Font.SourceSans
+bt7.TextSize = 20
+bt7.Parent = SF
+
+local bt8 = Instance.new("TextButton")
+bt8.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt8.Position = UDim2.new(0.75, 0, 0.1, 0)
+bt8.BackgroundColor3 = Color3.new(0, 0, 0)
+bt8.BorderColor3 = Color3.new(1,1,1)
+bt8.BorderSizePixel = 1
+bt8.Text = "Text"
+bt8.BackgroundTransparency = 0 
+bt8.TextColor3 = Color3.new(255, 255, 255)
+bt8.Font = Enum.Font.SourceSans
+bt8.TextSize = 20
+bt8.Parent = SF
+
+local bt9 = Instance.new("TextButton")
+bt9.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt9.Position = UDim2.new(0.03, 0, 0.19, 0)
+bt9.BackgroundColor3 = Color3.new(0, 0, 0)
+bt9.BorderColor3 = Color3.new(1,1,1)
+bt9.BorderSizePixel = 1
+bt9.Text = "Text"
+bt9.BackgroundTransparency = 0 
+bt9.TextColor3 = Color3.new(255, 255, 255)
+bt9.Font = Enum.Font.SourceSans
+bt9.TextSize = 20
+bt9.Parent = SF
+
+local bt10 = Instance.new("TextButton")
+bt10.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt10.Position = UDim2.new(0.03, 0, 0.34, 0)
+bt10.BackgroundColor3 = Color3.new(0, 0, 0)
+bt10.BorderColor3 = Color3.new(1,1,1)
+bt10.BorderSizePixel = 1
+bt10.Text = "Text"
+bt10.BackgroundTransparency = 0
+bt10.TextColor3 = Color3.new(255, 255, 255)
+bt10.Font = Enum.Font.SourceSans
+bt10.TextSize = 20
+bt10.Parent = SF
+
+local bt11 = Instance.new("TextButton")
+bt11.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt11.Position = UDim2.new(0.27, 0, 0.34, 0)
+bt11.BackgroundColor3 = Color3.new(0, 0, 0)
+bt11.BorderColor3 = Color3.new(1,1,1)
+bt11.BorderSizePixel = 1
+bt11.Text = "Text"
+bt11.BackgroundTransparency = 0
+bt11.TextColor3 = Color3.new(255, 255, 255)
+bt11.Font = Enum.Font.SourceSans
+bt11.TextSize = 20
+bt11.Parent = SF
+
+local bt12 = Instance.new("TextButton")
+bt12.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt12.Position = UDim2.new(0.51, 0, 0.34, 0)
+bt12.BackgroundColor3 = Color3.new(0, 0, 0)
+bt12.BorderColor3 = Color3.new(1,1,1)
+bt12.BorderSizePixel = 1
+bt12.Text = "Text"
+bt12.BackgroundTransparency = 0
+bt12.TextColor3 = Color3.new(255, 255, 255)
+bt12.Font = Enum.Font.SourceSans
+bt12.TextSize = 20
+bt12.Parent = SF
+
+local bt13 = Instance.new("TextButton")
+bt13.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt13.Position = UDim2.new(0.75, 0, 0.34, 0)
+bt13.BackgroundColor3 = Color3.new(0, 0, 0)
+bt13.BorderColor3 = Color3.new(1,1,1)
+bt13.BorderSizePixel = 1
+bt13.Text = "Text"
+bt13.BackgroundTransparency = 0
+bt13.TextColor3 = Color3.new(255, 255, 255)
+bt13.Font = Enum.Font.SourceSans
+bt13.TextSize = 20
+bt13.Parent = SF
+
+local bt14 = Instance.new("TextButton")
+bt14.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt14.Position = UDim2.new(0.03, 0, 0.43, 0)
+bt14.BackgroundColor3 = Color3.new(0, 0, 0)
+bt14.BorderColor3 = Color3.new(1,1,1)
+bt14.BorderSizePixel = 1
+bt14.Text = "Text"
+bt14.BackgroundTransparency = 0
+bt14.TextColor3 = Color3.new(255, 255, 255)
+bt14.Font = Enum.Font.SourceSans
+bt14.TextSize = 20
+bt14.Parent = SF
+
+local bt15 = Instance.new("TextButton")
+bt15.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt15.Position = UDim2.new(0.27, 0, 0.43, 0)
+bt15.BackgroundColor3 = Color3.new(0, 0, 0)
+bt15.BorderColor3 = Color3.new(1,1,1)
+bt15.BorderSizePixel = 1
+bt15.Text = "Text"
+bt15.BackgroundTransparency = 0
+bt15.TextColor3 = Color3.new(255, 255, 255)
+bt15.Font = Enum.Font.SourceSans
+bt15.TextSize = 20
+bt15.Parent = SF
+
+local bt16 = Instance.new("TextButton")
+bt16.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt16.Position = UDim2.new(0.51, 0, 0.43, 0)
+bt16.BackgroundColor3 = Color3.new(0, 0, 0)
+bt16.BorderColor3 = Color3.new(1,1,1)
+bt16.BorderSizePixel = 1
+bt16.Text = "Text"
+bt16.BackgroundTransparency = 0
+bt16.TextColor3 = Color3.new(255, 255, 255)
+bt16.Font = Enum.Font.SourceSans
+bt16.TextSize = 20
+bt16.Parent = SF
+
+local bt17 = Instance.new("TextButton")
+bt17.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt17.Position = UDim2.new(0.75, 0, 0.43, 0)
+bt17.BackgroundColor3 = Color3.new(0, 0, 0)
+bt17.BorderColor3 = Color3.new(1,1,1)
+bt17.BorderSizePixel = 1
+bt17.Text = "Text"
+bt17.BackgroundTransparency = 0
+bt17.TextColor3 = Color3.new(255, 255, 255)
+bt17.Font = Enum.Font.SourceSans
+bt17.TextSize = 20
+bt17.Parent = SF
+
+local bt18 = Instance.new("TextButton")
+bt18.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt18.Position = UDim2.new(0.03, 0, 0.52, 0)
+bt18.BackgroundColor3 = Color3.new(0, 0, 0)
+bt18.BorderColor3 = Color3.new(1,1,1)
+bt18.BorderSizePixel = 1
+bt18.Text = "Text"
+bt18.BackgroundTransparency = 0
+bt18.TextColor3 = Color3.new(255, 255, 255)
+bt18.Font = Enum.Font.SourceSans
+bt18.TextSize = 20
+bt18.Parent = SF
+
+local bt19 = Instance.new("TextButton")
+bt19.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt19.Position = UDim2.new(0.27, 0, 0.52, 0)
+bt19.BackgroundColor3 = Color3.new(0, 0, 0)
+bt19.BorderColor3 = Color3.new(1,1,1)
+bt19.BorderSizePixel = 1
+bt19.Text = "Text"
+bt19.BackgroundTransparency = 0
+bt19.TextColor3 = Color3.new(255, 255, 255)
+bt19.Font = Enum.Font.SourceSans
+bt19.TextSize = 20
+bt19.Parent = SF
+
+local bt20 = Instance.new("TextButton")
+bt20.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt20.Position = UDim2.new(0.51, 0, 0.52, 0)
+bt20.BackgroundColor3 = Color3.new(0, 0, 0)
+bt20.BorderColor3 = Color3.new(1,1,1)
+bt20.BorderSizePixel = 1
+bt20.Text = "Text"
+bt20.BackgroundTransparency = 0
+bt20.TextColor3 = Color3.new(255, 255, 255)
+bt20.Font = Enum.Font.SourceSans
+bt20.TextSize = 20
+bt20.Parent = SF
+
+local bt21 = Instance.new("TextButton")
+bt21.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt21.Position = UDim2.new(0.75, 0, 0.52, 0)
+bt21.BackgroundColor3 = Color3.new(0, 0, 0)
+bt21.BorderColor3 = Color3.new(1,1,1)
+bt21.BorderSizePixel = 1
+bt21.Text = "Text"
+bt21.BackgroundTransparency = 0
+bt21.TextColor3 = Color3.new(255, 255, 255)
+bt21.Font = Enum.Font.SourceSans
+bt21.TextSize = 20
+bt21.Parent = SF
+
+local bt22 = Instance.new("TextButton")
+bt22.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt22.Position = UDim2.new(0.03, 0, 0.61, 0)
+bt22.BackgroundColor3 = Color3.new(0, 0, 0)
+bt22.BorderColor3 = Color3.new(1,1,1)
+bt22.BorderSizePixel = 1
+bt22.Text = "Text"
+bt22.BackgroundTransparency = 0
+bt22.TextColor3 = Color3.new(255, 255, 255)
+bt22.Font = Enum.Font.SourceSans
+bt22.TextSize = 20
+bt22.Parent = SF
+
+local bt23 = Instance.new("TextButton")
+bt23.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt23.Position = UDim2.new(0.27, 0, 0.61, 0)
+bt23.BackgroundColor3 = Color3.new(0, 0, 0)
+bt23.BorderColor3 = Color3.new(1,1,1)
+bt23.BorderSizePixel = 1
+bt23.Text = "Text"
+bt23.BackgroundTransparency = 0
+bt23.TextColor3 = Color3.new(255, 255, 255)
+bt23.Font = Enum.Font.SourceSans
+bt23.TextSize = 20
+bt23.Parent = SF
+
+local bt24 = Instance.new("TextButton")
+bt24.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt24.Position = UDim2.new(0.51, 0, 0.61, 0)
+bt24.BackgroundColor3 = Color3.new(0, 0, 0)
+bt24.BorderColor3 = Color3.new(1,1,1)
+bt24.BorderSizePixel = 1
+bt24.Text = "Text"
+bt24.BackgroundTransparency = 0
+bt24.TextColor3 = Color3.new(255, 255, 255)
+bt24.Font = Enum.Font.SourceSans
+bt24.TextSize = 20
+bt24.Parent = SF
+
+local bt25 = Instance.new("TextButton")
+bt25.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt25.Position = UDim2.new(0.75, 0, 0.61, 0)
+bt25.BackgroundColor3 = Color3.new(0, 0, 0)
+bt25.BorderColor3 = Color3.new(1,1,1)
+bt25.BorderSizePixel = 1
+bt25.Text = "Text"
+bt25.BackgroundTransparency = 0
+bt25.TextColor3 = Color3.new(255, 255, 255)
+bt25.Font = Enum.Font.SourceSans
+bt25.TextSize = 20
+bt25.Parent = SF
+
+local bt26 = Instance.new("TextButton")
+bt26.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt26.Position = UDim2.new(0.03, 0, 0.70, 0)
+bt26.BackgroundColor3 = Color3.new(0, 0, 0)
+bt26.BorderColor3 = Color3.new(1,1,1)
+bt26.BorderSizePixel = 1
+bt26.Text = "Text"
+bt26.BackgroundTransparency = 0
+bt26.TextColor3 = Color3.new(255, 255, 255)
+bt26.Font = Enum.Font.SourceSans
+bt26.TextSize = 20
+bt26.Parent = SF
+
+local bt27 = Instance.new("TextButton")
+bt27.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt27.Position = UDim2.new(0.27, 0, 0.70, 0)
+bt27.BackgroundColor3 = Color3.new(0, 0, 0)
+bt27.BorderColor3 = Color3.new(1,1,1)
+bt27.BorderSizePixel = 1
+bt27.Text = "Text"
+bt27.BackgroundTransparency = 0
+bt27.TextColor3 = Color3.new(255, 255, 255)
+bt27.Font = Enum.Font.SourceSans
+bt27.TextSize = 20
+bt27.Parent = SF
+
+local bt28 = Instance.new("TextButton")
+bt28.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt28.Position = UDim2.new(0.51, 0, 0.70, 0)
+bt28.BackgroundColor3 = Color3.new(0, 0, 0)
+bt28.BorderColor3 = Color3.new(1,1,1)
+bt28.BorderSizePixel = 1
+bt28.Text = "Text"
+bt28.BackgroundTransparency = 0
+bt28.TextColor3 = Color3.new(255, 255, 255)
+bt28.Font = Enum.Font.SourceSans
+bt28.TextSize = 20
+bt28.Parent = SF
+
+local bt29 = Instance.new("TextButton")
+bt29.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt29.Position = UDim2.new(0.75, 0, 0.70, 0)
+bt29.BackgroundColor3 = Color3.new(0, 0, 0)
+bt29.BorderColor3 = Color3.new(1,1,1)
+bt29.BorderSizePixel = 1
+bt29.Text = "Text"
+bt29.BackgroundTransparency = 0
+bt29.TextColor3 = Color3.new(255, 255, 255)
+bt29.Font = Enum.Font.SourceSans
+bt29.TextSize = 20
+bt29.Parent = SF
+
+local bt30 = Instance.new("TextButton")
+bt30.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt30.Position = UDim2.new(0.03, 0, 0.79, 0)
+bt30.BackgroundColor3 = Color3.new(0, 0, 0)
+bt30.BorderColor3 = Color3.new(1,1,1)
+bt30.BorderSizePixel = 1
+bt30.Text = "Text"
+bt30.BackgroundTransparency = 0
+bt30.TextColor3 = Color3.new(255, 255, 255)
+bt30.Font = Enum.Font.SourceSans
+bt30.TextSize = 20
+bt30.Parent = SF
+
+local bt31 = Instance.new("TextButton")
+bt31.Size = UDim2.new(0.21, 0, 0.07, 0)
+bt31.Position = UDim2.new(0.27, 0, 0.79, 0)
+bt31.BackgroundColor3 = Color3.new(0, 0, 0)
+bt31.BorderColor3 = Color3.new(1,1,1)
+bt31.BorderSizePixel = 1
+bt31.Text = "Text"
+bt31.BackgroundTransparency = 0
+bt31.TextColor3 = Color3.new(255, 255, 255)
+bt31.Font = Enum.Font.SourceSans
+bt31.TextSize = 20
+bt31.Parent = SF
+
