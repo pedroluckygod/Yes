@@ -198,12 +198,15 @@ bt9.Position = UDim2.new(0.03, 0, 0.19, 0)
 bt9.BackgroundColor3 = Color3.new(0, 0, 0)
 bt9.BorderColor3 = Color3.new(1,1,1)
 bt9.BorderSizePixel = 1
-bt9.Text = "Text"
+bt9.Text = "cmdbar3"
 bt9.BackgroundTransparency = 0 
 bt9.TextColor3 = Color3.new(255, 255, 255)
 bt9.Font = Enum.Font.SourceSans
 bt9.TextSize = 20
 bt9.Parent = SF
+bt9.MouseButton1Click:Connect(function()
+  loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-n0ta-projectcmdbar-v2-43358"))()
+end)
 
 local N0ta = Instance.new("ImageLabel")
 N0ta.Size = UDim2.new(0.5, 0, 0.12, 0)
@@ -234,12 +237,15 @@ bt11.Position = UDim2.new(0.27, 0, 0.34, 0)
 bt11.BackgroundColor3 = Color3.new(0, 0, 0)
 bt11.BorderColor3 = Color3.new(1,1,1)
 bt11.BorderSizePixel = 1
-bt11.Text = "Text"
+bt11.Text = "Car"
 bt11.BackgroundTransparency = 0
 bt11.TextColor3 = Color3.new(255, 255, 255)
 bt11.Font = Enum.Font.SourceSans
 bt11.TextSize = 20
 bt11.Parent = SF
+bt11.MouseButton1Click:Connect(function()
+  hd(";insert 6433323089")
+end)
 
 local bt12 = Instance.new("TextButton")
 bt12.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -247,12 +253,15 @@ bt12.Position = UDim2.new(0.51, 0, 0.34, 0)
 bt12.BackgroundColor3 = Color3.new(0, 0, 0)
 bt12.BorderColor3 = Color3.new(1,1,1)
 bt12.BorderSizePixel = 1
-bt12.Text = "Text"
+bt12.Text = "Slingshot"
 bt12.BackgroundTransparency = 0
 bt12.TextColor3 = Color3.new(255, 255, 255)
 bt12.Font = Enum.Font.SourceSans
 bt12.TextSize = 20
 bt12.Parent = SF
+bt12.MouseButton1Click:Connect(function()
+  hd(";insert 47620")
+end)
 
 local bt13 = Instance.new("TextButton")
 bt13.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -260,12 +269,15 @@ bt13.Position = UDim2.new(0.75, 0, 0.34, 0)
 bt13.BackgroundColor3 = Color3.new(0, 0, 0)
 bt13.BorderColor3 = Color3.new(1,1,1)
 bt13.BorderSizePixel = 1
-bt13.Text = "Text"
+bt13.Text = "Katana"
 bt13.BackgroundTransparency = 0
 bt13.TextColor3 = Color3.new(255, 255, 255)
 bt13.Font = Enum.Font.SourceSans
 bt13.TextSize = 20
 bt13.Parent = SF
+bt13.MouseButton1Click:Connect(function()
+  hd(";insert 246270069")
+end)
 
 local bt14 = Instance.new("TextButton")
 bt14.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -273,12 +285,15 @@ bt14.Position = UDim2.new(0.03, 0, 0.43, 0)
 bt14.BackgroundColor3 = Color3.new(0, 0, 0)
 bt14.BorderColor3 = Color3.new(1,1,1)
 bt14.BorderSizePixel = 1
-bt14.Text = "Text"
+bt14.Text = "Lag \n Map"
 bt14.BackgroundTransparency = 0
 bt14.TextColor3 = Color3.new(255, 255, 255)
 bt14.Font = Enum.Font.SourceSans
 bt14.TextSize = 20
 bt14.Parent = SF
+bt14.MouseButton1Click:Connect(function()
+  hd(";insert 10840642581")
+end)
 
 local bt15 = Instance.new("TextButton")
 bt15.Size = UDim2.new(0.21, 0, 0.07, 0)
@@ -286,7 +301,7 @@ bt15.Position = UDim2.new(0.27, 0, 0.43, 0)
 bt15.BackgroundColor3 = Color3.new(0, 0, 0)
 bt15.BorderColor3 = Color3.new(1,1,1)
 bt15.BorderSizePixel = 1
-bt15.Text = "Text"
+bt15.Text = "Idk"
 bt15.BackgroundTransparency = 0
 bt15.TextColor3 = Color3.new(255, 255, 255)
 bt15.Font = Enum.Font.SourceSans
