@@ -270,7 +270,7 @@ button4.Font = Enum.Font.SourceSans
 button4.Parent = frame
 button4.TextSize = 20
 button4.MouseButton1Click:Connect(function()
-    hubF.Visible = not hubf.Visible
+    hubF.Visible = not hubF.Visible
 end)
 
 
