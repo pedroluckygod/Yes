@@ -391,7 +391,7 @@ function SAV()
 		for _, k in ipairs(targets) do
 			for _, b in ipairs(k:GetDescendants()) do
 				if b:IsA("RemoteEvent") or b:IsA("RemoteFunction") then
-				if b.Parent ~= chat and b.Parent ~= game["ReplicatedStorage"]:FindFirstChildWhichIsA("Folder") then
+				if b.Parent ~= HD:FindFirstChildOfClass("Folder") and  b.Parent ~= chat and b.Parent ~= game["ReplicatedStorage"]:FindFirstChildWhichIsA("Folder") then
 					table.insert(rTable, b)
 				end
 				end
