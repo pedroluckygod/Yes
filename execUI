@@ -81,6 +81,21 @@ SBC.CornerRadius = UDim.new(0, 5)
 SBC.Parent = ScanBT
 
 
+local gui = Instance.new("ScreenGui")
+gui.Name = "patrickGui"
+gui.Parent = game.CoreGui
+
+
+
+
+
+
+
+
+
+
+
+
 local frame = Instance.new("Frame")
 frame.Size = UDim2.new(0.3, 0, 0.5, 0)
 frame.Position = UDim2.new(0.3, 0, 0.3, 0)
@@ -124,7 +139,7 @@ box.BackgroundColor3 = Color3.fromRGB(13,13,13)
 box.BorderColor3 = Color3.new(0, 0, 0)
 box.BorderSizePixel = 1
 box.PlaceholderText = "hi"
-box.TextColor3 = Color3.new(255, 255, 255)
+box.TextColor3 = Color3.new(255,255,255)
 box.BackgroundTransparency = 0
 box.Font = Enum.Font.Code
 box.TextSize = 15
@@ -134,18 +149,18 @@ box.TextYAlignment = "Top"
 box.ClearTextOnFocus = false
 
 local run = Instance.new("TextButton")
-run.Size = UDim2.new(0.3, 0, 0.14, 0)
+run.Size = UDim2.new(0.2, 0, 0.14, 0)
 run.Position = UDim2.new(0.0, 0, 0.82, 0)
-run.BackgroundColor3 = Color3.new(0, 0, 0)
+run.BackgroundColor3 = Color3.fromRGB(33,33,33)
 run.BorderColor3 = Color3.new(0, 0, 0)
 run.BorderSizePixel = 1
 run.Text = "Execute"
 run.BackgroundTransparency = 0 
 run.TextColor3 = Color3.new(255, 255, 255)
-run.Font = Enum.Font.Code
+run.Font = Enum.Font.SourceSans
 run.Parent = frame
-run.TextScaled = true
-run.MouseButton1Down:Connect(function()
+run.TextSize = 20
+run.MouseButton1Click:Connect(function()
     if remote:IsA("RemoteEvent") then
     remote:FireServer(box.Text)
     elseif remote:IsA("RemoteFunction") then
@@ -156,18 +171,62 @@ run.MouseButton1Down:Connect(function()
 end)
 
 
-local clr = Instance.new("TextButton")
-clr.Size = UDim2.new(0.3, 0, 0.14, 0)
-clr.Position = UDim2.new(0.31, 0, 0.82, 0)
-clr.BackgroundColor3 = Color3.new(0, 0, 0)
-clr.BorderColor3 = Color3.new(0, 0, 0)
-clr.BorderSizePixel = 1
-clr.Text = "Clear"
-clr.BackgroundTransparency = 0 
-clr.TextColor3 = Color3.new(255, 255, 255)
-clr.Font = Enum.Font.Code
-clr.Parent = frame
-clr.TextScaled = true
+local button1 = Instance.new("TextButton")
+button1.Size = UDim2.new(0.2, 0, 0.14, 0)
+button1.Position = UDim2.new(0.21, 0, 0.82, 0)
+button1.BackgroundColor3 = Color3.fromRGB(33,33,33)
+button1.BorderColor3 = Color3.new(0, 0, 0)
+button1.BorderSizePixel = 1
+button1.Text = "Clear"
+button1.BackgroundTransparency = 0 
+button1.TextColor3 = Color3.new(255, 255, 255)
+button1.Font = Enum.Font.SourceSans
+button1.Parent = frame
+button1.TextSize = 20
+button1.MouseButton1Click:Connect(function()
+    box.Text = ""
+end)
+
+
+local uic2 = Instance.new("UICorner")
+uic2.CornerRadius = UDim.new(0, 5)
+uic2.Parent = button3
+
+
+local button3 = Instance.new("TextButton")
+button3.Size = UDim2.new(0.2, 0, 0.14, 0)
+button3.Position = UDim2.new(0.42, 0, 0.82, 0)
+button3.BackgroundColor3 = Color3.fromRGB(33,33,33)
+button3.BorderColor3 = Color3.new(0, 0, 0)
+button3.BorderSizePixel = 1
+button3.Text = "Hide"
+button3.BackgroundTransparency = 0
+button3.TextColor3 = Color3.new(255, 255, 255)
+button3.Font = Enum.Font.SourceSans
+button3.Parent = frame
+button3.TextSize = 20
+button3.MouseButton1Click:Connect(function()
+    local hidden = false
+    if not hidden then
+        box.TextTransparency = 1
+        hidden = true
+    elseif hidden then
+        box.TextTransparency = 0
+        hidden = false
+    end
+end)
+
+
+local uic3 = Instance.new("UICorner")
+uic3.CornerRadius = UDim.new(0, 5)
+uic3.Parent = button3
+
+
+
+local uic4 = Instance.new("UICorner")
+uic4.CornerRadius = UDim.new(0, 5)
+uic4.Parent = button1
+
 
 
 local UIC = Instance.new("UICorner")
@@ -181,8 +240,129 @@ uic1.Parent = run
 
 
 
+local uicidk = Instance.new("UICorner")
+uicidk.CornerRadius = UDim.new(0, 5)
+uicidk.Parent = button4
 
---///patrick gui maker///--
+
+local hubF = Instance.new("Frame")
+hubF.Size = UDim2.new(0.5, 0, 0.99, 0)
+hubF.Position = UDim2.new(1.1, 0, 0.01, 0)
+hubF.BackgroundColor3 = Color3.new(0,0,0)
+hubF.BorderColor3 = Color3.new(0, 0, 0)
+hubF.BorderSizePixel = 1
+hubF.Active = true
+hubF.BackgroundTransparency = 0 
+hubF.Draggable = false
+hubF.Parent = frame
+hubF.Visible = false
+
+local button4 = Instance.new("TextButton")
+button4.Size = UDim2.new(0.2, 0, 0.14, 0)
+button4.Position = UDim2.new(0.77, 0, 0.82, 0)
+button4.BackgroundColor3 = Color3.fromRGB(33,33,33)
+button4.BorderColor3 = Color3.new(0, 0, 0)
+button4.BorderSizePixel = 1
+button4.Text = "Hub"
+button4.BackgroundTransparency = 0
+button4.TextColor3 = Color3.new(255, 255, 255)
+button4.Font = Enum.Font.SourceSans
+button4.Parent = frame
+button4.TextSize = 20
+button4.MouseButton1Click:Connect(function()
+    hubF.Visible = not hubf.Visible
+end)
+
+
+local HSF = Instance.new("ScrollingFrame")
+HSF.Size = UDim2.new(0.99, 0, 0.99, 0)
+HSF.Position = UDim2.new(0.0, 0, 0.0, 0)
+HSF.BackgroundColor3 = Color3.fromRGB(33,33,33)
+HSF.BorderColor3 = Color3.new(0, 0, 0)
+HSF.BorderSizePixel = 1
+HSF.CanvasSize = UDim2.new(0, 0, 1.2, 0)
+HSF.ScrollBarThickness = 6
+HSF.Parent = hubF
+
+local HB1 = Instance.new("TextButton")
+HB1.Size = UDim2.new(0.99, 0, 0.1, 0)
+HB1.Position = UDim2.new(0.0, 0, 0.00, 0)
+HB1.BackgroundColor3 = Color3.new(1, 0, 0)
+HB1.BorderColor3 = Color3.new(0, 0, 0)
+HB1.BorderSizePixel = 1
+HB1.Text = "IY SS"
+HB1.BackgroundTransparency = 0 
+HB1.TextColor3 = Color3.new(1, 1, 1)
+HB1.Font = Enum.Font.SourceSans
+HB1.TextSize = 20
+HB1.Parent = HSF
+HB1.MouseButton1Click:Connect(function()
+    box.Text = "require(13716575182)('name')"
+end)
+
+local HB2 = Instance.new("TextButton")
+HB2.Size = UDim2.new(0.99, 0, 0.1, 0)
+HB2.Position = UDim2.new(0.0, 0, 0.11, 0)
+HB2.BackgroundColor3 = Color3.new(1, 0, 0)
+HB2.BorderColor3 = Color3.new(0, 0, 0)
+HB2.BorderSizePixel = 1
+HB2.Text = "HD Rank"
+HB2.BackgroundTransparency = 0 
+HB2.TextColor3 = Color3.new(1, 1, 1)
+HB2.Font = Enum.Font.SourceSans
+HB2.TextSize = 20
+HB2.Parent = HSF
+HB2.MouseButton1Click:Connect(function()
+        box.Text = "require(7192763922).load('name')"
+end)
+
+local HB3 = Instance.new("TextButton")
+HB3.Size = UDim2.new(0.99, 0, 0.1, 0)
+HB3.Position = UDim2.new(0.0, 0, 0.22, 0)
+HB3.BackgroundColor3 = Color3.new(1, 0, 0)
+HB3.BorderColor3 = Color3.new(0, 0, 0)
+HB3.BorderSizePixel = 1
+HB3.Text = "Sensation"
+HB3.BackgroundTransparency = 0 
+HB3.TextColor3 = Color3.new(1, 1, 1)
+HB3.Font = Enum.Font.SourceSans
+HB3.TextSize = 20
+HB3.Parent = HSF
+HB3.MouseButton1Click:Connect(function()
+    box.Text = "require(100263845596551)('name')"
+end)
+
+local HB4 = Instance.new("TextButton")
+HB4.Size = UDim2.new(0.99, 0, 0.1, 0)
+HB4.Position = UDim2.new(0.0, 0, 0.33, 0)
+HB4.BackgroundColor3 = Color3.new(1, 0, 0)
+HB4.BorderColor3 = Color3.new(0, 0, 0)
+HB4.BorderSizePixel = 1
+HB4.Text = "Exser"
+HB4.BackgroundTransparency = 0 
+HB4.TextColor3 = Color3.new(1, 1, 1)
+HB4.Font = Enum.Font.SourceSans
+HB4.TextSize = 20
+HB4.Parent = HSF
+HB4.MouseButton1Click:Connect(function()
+    box.Text = "require(13716575182):pls('name')"
+end)
+
+local HB5 = Instance.new("TextButton")
+HB5.Size = UDim2.new(0.99, 0, 0.1, 0)
+HB5.Position = UDim2.new(0.0, 0, 0.44, 0)
+HB5.BackgroundColor3 = Color3.new(1, 0, 0)
+HB5.BorderColor3 = Color3.new(0, 0, 0)
+HB5.BorderSizePixel = 1
+HB5.Text = "Button 5"
+HB5.BackgroundTransparency = 0 
+HB5.TextColor3 = Color3.new(1, 1, 1)
+HB5.Font = Enum.Font.SourceSans
+HB5.TextSize = 20
+HB5.Parent = HSF
+
+
+
 local rrs = game:GetService("RobloxReplicatedStorage")
 local rs = game:GetService("ReplicatedStorage")
 local js = game:GetService("JointsService")
@@ -200,7 +380,7 @@ function SAV()
 		gotremote = nil
 		rTable = {}
 
-		notify("n0ta's scanner v1", "BDLegacy Api\nScanning")
+		notify("n0ta's scanner v1", "Scanning")
 
 		local targets = {
 			game:GetService("Lighting"),
@@ -259,7 +439,6 @@ function SAV()
 	end
 end
 
-  --  Code
 
 
 
@@ -274,7 +453,6 @@ tween:Play()
 
 
 
--- sep
 
 
 
