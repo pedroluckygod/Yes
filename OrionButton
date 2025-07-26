@@ -1,0 +1,57 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+
+designed using localmaze gui creator
+]=]
+
+local CollectionService = game:GetService("CollectionService");
+local G2L = {};
+
+G2L["ScreenGui_1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["ScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+CollectionService:AddTag(G2L["ScreenGui_1"], [[main]]);
+
+G2L["ImageButton_2"] = Instance.new("ImageButton", G2L["ScreenGui_1"]);
+G2L["ImageButton_2"]["BorderSizePixel"] = 0;
+-- G2L["ImageButton_2"]["ImageContent"] = ;
+G2L["ImageButton_2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ImageButton_2"]["Image"] = [[rbxassetid://18659170516]];
+G2L["ImageButton_2"]["Size"] = UDim2.new(0.07177, 0, 0.15354, 0);
+G2L["ImageButton_2"]["Position"] = UDim2.new(0, 285, 0, 44);
+
+
+G2L["UIDragDetector_3"] = Instance.new("UIDragDetector", G2L["ImageButton_2"]);
+G2L["UIDragDetector_3"]["DragUDim2"] = UDim2.new(0, -10, 0, 10);
+
+
+G2L["UICorner_4"] = Instance.new("UICorner", G2L["ImageButton_2"]);
+
+
+
+G2L["LocalScript_5"] = Instance.new("LocalScript", G2L["ImageButton_2"]);
+
+
+
+G2L["UIAspectRatioConstraint_6"] = Instance.new("UIAspectRatioConstraint", G2L["ImageButton_2"]);
+G2L["UIAspectRatioConstraint_6"]["AspectRatio"] = 1.05882;
+
+
+local function C_5()
+	local script = G2L["LocalScript_5"];
+	script.Parent.MouseButton1Click:Connect(function()	
+	
+	game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.RightShift, false, game)	
+	wait(0.1)	
+	game:GetService("VirtualInputManager"):SendKeyEvent(false, Enum.KeyCode.RightShift, false, game)	
+	
+	end)	
+end;
+task.spawn(C_5);
+
+return G2L["ScreenGui_1"]
