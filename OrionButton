@@ -8,7 +8,7 @@
 
 designed using localmaze gui creator
 ]=]
-
+ 
 local CollectionService = game:GetService("CollectionService");
 local G2L = {};
 
