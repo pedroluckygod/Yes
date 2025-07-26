@@ -24,10 +24,9 @@ G2L["ImageButton_2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["ImageButton_2"]["Image"] = [[rbxassetid://18659170516]];
 G2L["ImageButton_2"]["Size"] = UDim2.new(0.07177, 0, 0.15354, 0);
 G2L["ImageButton_2"]["Position"] = UDim2.new(0, 285, 0, 44);
+G2L["ImageButton_2"]["Draggable"] = true
 
 
-G2L["UIDragDetector_3"] = Instance.new("UIDragDetector", G2L["ImageButton_2"]);
-G2L["UIDragDetector_3"]["DragUDim2"] = UDim2.new(0, -10, 0, 10);
 
 
 G2L["UICorner_4"] = Instance.new("UICorner", G2L["ImageButton_2"]);
