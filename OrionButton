@@ -12,7 +12,7 @@ designed using localmaze gui creator
 local CollectionService = game:GetService("CollectionService");
 local G2L = {};
 
-G2L["ScreenGui_1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["ScreenGui_1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
 G2L["ScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 CollectionService:AddTag(G2L["ScreenGui_1"], [[main]]);
