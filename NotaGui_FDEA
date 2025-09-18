@@ -450,7 +450,7 @@ if v:IsA("BasePart") then
 rotate(v,CFrame.new(v.Position) * CFrame.Angles(math.random(-300,300),math.random(-300,300), math.random(-300,300) ))
 elseif v:IsA("Model") then
     for _, k in pairs(v:GetChildren()) do
-        if k:IsA("Part") and k.Name ~= "HumanoidRootPart" then
+        if k:IsA("Part") and not k.Parent.Name:match(char.Name) then
         rotate(k,CFrame.new(k.Position) * CFrame.Angles(math.random(-300,300),math.random(-300,300), math.random(-300,300) ))
 
         end
