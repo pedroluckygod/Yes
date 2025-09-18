@@ -1,5 +1,5 @@
 -- localmaze gui creator
-
+local UIS = game:GetService("UserInputService")
 local player = game.Players.LocalPlayer
 local char = player.Character 
 -- the part above isnt mine
@@ -106,7 +106,7 @@ By @NotaPlayer4lt]];
 G2L["TextLabel_7"]["Position"] = UDim2.new(0, 4, 0, 2);
 
 
-G2L["UID"] = Instance.new("UIDragDetector",G2L["Frame_2"])
+
 
 newbutton("Skybox","Skybox",function()
     pcall(loadstring(game:HttpGet("https://raw.githubusercontent.com/pedroluckygod/Yes/refs/heads/main/f3x_n0ta")))()
@@ -166,11 +166,11 @@ newbutton("rl","Restore Lighting",function()
 end)
 newbutton("RealmBeta","Realm",function()
     local tool
-    
-    
-    
-    
-    
+
+
+
+
+
     for _,v in player:GetDescendants() do
         if v.Name == "SyncAPI" then
             tool = v.Parent
@@ -182,17 +182,17 @@ newbutton("RealmBeta","Realm",function()
         end
     end
     remote = tool.SyncAPI.ServerEndpoint -- this part isnt mine
-    
- 
+
+
 
 function resize(obj,cf,size)
     local args = {
-	"SyncResize",
-		{{
-			Part = obj,
-			CFrame = cf,
-			Size = size
-			}}
+        "SyncResize",
+                {{
+                        Part = obj,
+                        CFrame = cf,
+                        Size = size
+                        }}
 }
 remote:InvokeServer(unpack(args))
 end
@@ -209,70 +209,70 @@ end
 
 function color(part,color)
 local args = {
-	"SyncColor",
-	{
-		{
-			Part = part;
-			UnionColoring = true;
-			Color = color
-		}
-	}
+        "SyncColor",
+        {
+                {
+                        Part = part;
+                        UnionColoring = true;
+                        Color = color
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
 end
 
 function ntexture(part,face)
 local args = {
-	"CreateTextures",
-	{
-		{
-			Part = part,
-			Face = Enum.NormalId.Front,
-			TextureType = "Decal"
-		}
-	}
+        "CreateTextures",
+        {
+                {
+                        Part = part,
+                        Face = Enum.NormalId.Front,
+                        TextureType = "Decal"
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
 end
 
 function rtexure(part)
 local args = {
-	"SyncTexture",
-	{
-		{
-			Part = part,
-			Face = Enum.NormalId.Front,
-			TextureType = "Decal",
-			Texture = "rbxassetid://77306121234298"
-		}
-	}
+        "SyncTexture",
+        {
+                {
+                        Part = part,
+                        Face = Enum.NormalId.Front,
+                        TextureType = "Decal",
+                        Texture = "rbxassetid://77306121234298"
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
 end
 
 function stex(part)
     local args = {
-	"CreateTextures",
-	{
-		{
-			Part = part,
-			Face = Enum.NormalId.Top,
-			TextureType = "Decal"
-		}
-	}
+        "CreateTextures",
+        {
+                {
+                        Part = part,
+                        Face = Enum.NormalId.Top,
+                        TextureType = "Decal"
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
 
 local args = {
-	"SyncTexture",
-	{
-		{
-			Part = part,
-			Face = Enum.NormalId.Top,
-			TextureType = "Decal",
-			Texture = "rbxassetid://5090068838"
-		}
-	}
+        "SyncTexture",
+        {
+                {
+                        Part = part,
+                        Face = Enum.NormalId.Top,
+                        TextureType = "Decal",
+                        Texture = "rbxassetid://5090068838"
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
 end
@@ -284,9 +284,9 @@ hd("punish all")
          delete(v)
     end
  end
- 
- 
- 
+
+
+
 local pos = CFrame.new(0,5,0)
 local basep = remote:InvokeServer("CreatePart","Normal",pos,workspace)
 resize(basep, pos, vector.create(200,2,200))
@@ -318,7 +318,7 @@ newbutton("idkbro","avocado ys [R15]",function()
     hd("size me 0. ;potatohead ;paint me green")
 end)
 newbutton("ok","raining pipes",function() 
-    
+
 for _,v in player:GetDescendants() do
         if v.Name == "SyncAPI" then
             tool = v.Parent
@@ -330,71 +330,71 @@ for _,v in player:GetDescendants() do
         end
     end
     remote = tool.SyncAPI.ServerEndpoint -- this part is not mine
-    
-    
-    
-    
-    
+
+
+
+
+
 function doit(part)
-    
-    
+
+
     local args = {
-	"CreateMeshes",
-	{
-		{
-			Part = part
-		}
-	}
+        "CreateMeshes",
+        {
+                {
+                        Part = part
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
-    
+
     local args = {
-	"SyncMesh",
-	{
-		{
-			Scale = vector.create(-20, -20, -20),
-			Part = part
-		}
-	}
+        "SyncMesh",
+        {
+                {
+                        Scale = vector.create(-20, -20, -20),
+                        Part = part
+                }
+        }
 }
 
 remote:InvokeServer(unpack(args))
 local args = {
-	"SyncMesh",
-	{
-		{
-			MeshType = Enum.MeshType.FileMesh,
-			Part = workspace:WaitForChild("Part")
-		}
-	}
+        "SyncMesh",
+        {
+                {
+                        MeshType = Enum.MeshType.FileMesh,
+                        Part = workspace:WaitForChild("Part")
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
 
 local args = {
-	"SyncMesh",
-	{
-		{
-			Part = part,
-			MeshId = "rbxassetid://17551699806"
-		}
-	}
+        "SyncMesh",
+        {
+                {
+                        Part = part,
+                        MeshId = "rbxassetid://17551699806"
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
 
 remote:InvokeServer(unpack(args))
 local args = {
-	"SyncAnchor",
-	{
-		{
-			Part = part,
-			Anchored = false
-		}
-	}
+        "SyncAnchor",
+        {
+                {
+                        Part = part,
+                        Anchored = false
+                }
+        }
 }
 remote:InvokeServer(unpack(args))
 end
 
- 
+
 
 
 for i = 1,30 do
@@ -416,6 +416,93 @@ newbutton("unc","uncmdbar2 others",function()
     hd("uncmdbar2 others")
 end)
 
+newbutton("rall","Rotate All",function()
+    for _,v in player:GetDescendants() do
+        if v.Name == "SyncAPI" then
+            tool = v.Parent
+        end
+    end
+    for _, v in ipairs(char:GetChildren()) do
+        if v:FindFirstChild("SyncAPI") then
+            tool = v.Parent
+        end
+    end
+    remote = tool.SyncAPI.ServerEndpoint -- this part is not mine
+
+function rotate(part, cf)
+local args = {
+    [1] = "SyncRotate",
+    [2] = {
+        [1] = {
+            ["Part"] = part,
+            ["CFrame"] = cf
+        }
+    }
+}
+
+remote:InvokeServer(unpack(args))
+end
+
+while wait(0.09) and G2L["ScreenGui_1"] do
+    spawn(function()
+for _, v in pairs(game.Workspace:GetChildren()) do
+if v:IsA("BasePart") then
+rotate(v,CFrame.new(v.Position) * CFrame.Angles(math.random(-300,300),math.random(-300,300), math.random(-300,300) ))
+elseif v:IsA("Model") then
+    for _, k in pairs(v:GetChildren()) do
+        if k:IsA("Part") and k.Name ~= "HumanoidRootPart" then
+        rotate(k,CFrame.new(k.Position) * CFrame.Angles(math.random(-300,300),math.random(-300,300), math.random(-300,300) ))
+
+        end
+    end
+    
+    
+end
+end
+end)
+end
+end)
+
+
+
+
+                function dragify(Frame)
+                dragToggle = nil
+                local dragSpeed = 0.33
+                dragInput = nil
+                dragStart = nil
+                local dragPos = nil
+                function updateInput(input)
+                        local Delta = input.Position - dragStart
+                        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+                        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
+                end
+                Frame.InputBegan:Connect(function(input)
+                        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+                                dragToggle = true
+                                dragStart = input.Position
+                                startPos = Frame.Position
+                                input.Changed:Connect(function()
+                                        if input.UserInputState == Enum.UserInputState.End then
+                                                dragToggle = false
+                                        end
+                                end)
+                        end
+                end)
+                Frame.InputChanged:Connect(function(input)
+                        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                                dragInput = input
+                        end
+                end)
+                game:GetService("UserInputService").InputChanged:Connect(function(input)
+                        if input == dragInput and dragToggle then
+                                updateInput(input)
+                        end
+                end)
+        end
+
+        dragify(G2L["Frame_2"])
+
+
 
 return G2L["ScreenGui_1"], require;
-
