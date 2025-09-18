@@ -1,8 +1,7 @@
--- localmaze gui creator
+
 local UIS = game:GetService("UserInputService")
 local player = game.Players.LocalPlayer
 local char = player.Character 
--- the part above isnt mine
 
 
 
