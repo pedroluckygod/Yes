@@ -53,7 +53,42 @@ G2L["Frame_2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["Frame_2"]["Size"] = UDim2.new(0, 436, 0, 430);
 G2L["Frame_2"]["Position"] = UDim2.new(0, 294, 0, 98);
 G2L["Frame_2"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+                function dragify(Frame)
+                dragToggle = nil
+                local dragSpeed = 0.33
+                dragInput = nil
+                dragStart = nil
+                local dragPos = nil
+                function updateInput(input)
+                        local Delta = input.Position - dragStart
+                        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+                        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
+                end
+                Frame.InputBegan:Connect(function(input)
+                        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+                                dragToggle = true
+                                dragStart = input.Position
+                                startPos = Frame.Position
+                                input.Changed:Connect(function()
+                                        if input.UserInputState == Enum.UserInputState.End then
+                                                dragToggle = false
+                                        end
+                                end)
+                        end
+                end)
+                Frame.InputChanged:Connect(function(input)
+                        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                                dragInput = input
+                        end
+                end)
+                game:GetService("UserInputService").InputChanged:Connect(function(input)
+                        if input == dragInput and dragToggle then
+                                updateInput(input)
+                        end
+                end)
+        end
 
+        dragify(G2L["Frame_2"])
 
 -- Players.NotaPlayer4lt.PlayerGui.ScreenGui.Frame.ScrollingFrame
 G2L["ScrollingFrame_3"] = Instance.new("ScrollingFrame", G2L["Frame_2"]);
@@ -466,43 +501,150 @@ end)
 
 
 
-                function dragify(Frame)
-                dragToggle = nil
-                local dragSpeed = 0.33
-                dragInput = nil
-                dragStart = nil
-                local dragPos = nil
-                function updateInput(input)
-                        local Delta = input.Position - dragStart
-                        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-                        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.15), {Position = Position}):Play()
-                end
-                Frame.InputBegan:Connect(function(input)
-                        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-                                dragToggle = true
-                                dragStart = input.Position
-                                startPos = Frame.Position
-                                input.Changed:Connect(function()
-                                        if input.UserInputState == Enum.UserInputState.End then
-                                                dragToggle = false
-                                        end
-                                end)
-                        end
-                end)
-                Frame.InputChanged:Connect(function(input)
-                        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-                                dragInput = input
-                        end
-                end)
-                game:GetService("UserInputService").InputChanged:Connect(function(input)
-                        if input == dragInput and dragToggle then
-                                updateInput(input)
-                        end
-                end)
+
+
+newbutton("SS","Smoke Spam [Back]",function()
+    for _,v in player:GetDescendants() do
+        if v.Name == "SyncAPI" then
+            tool = v.Parent
         end
+    end
+    for _, v in ipairs(char:GetChildren()) do
+        if v:FindFirstChild("SyncAPI") then
+            tool = v.Parent
+        end
+    end
+    remote = tool.SyncAPI.ServerEndpoint -- this part is not mine
+-- btw im getting f3x just to update f3x status
+function dosmoke(part)
+local args = {
+    [1] = "CreateDecorations",
+    [2] = {
+        [1] = {
+            ["Part"] = part,
+            ["DecorationType"] = "Smoke"
+        }
+    }
+}
 
-        dragify(G2L["Frame_2"])
 
 
+remote:InvokeServer(unpack(args))
+local args = {
+    [1] = "SyncDecorate",
+    [2] = {
+        [1] = {
+            ["Part"] = part,
+            ["DecorationType"] = "Smoke",
+            ["Size"] = 214
+        }
+    }
+}
+
+
+remote:InvokeServer(unpack(args))
+
+end
+
+for _, v in pairs(game.Workspace:GetChildren()) do
+   if v:IsA("BasePart") then
+       dosmoke(v)
+   elseif v:IsA("Model") then
+      for _, m in pairs(v:GetChildren()) do
+      if m:IsA("Part") then 
+          dosmoke(m)
+          end
+      
+      end
+      
+   end
+   
+end
+
+
+end)
+
+newbutton("sd","Smoke Disco [Back]",function()
+    for _,v in player:GetDescendants() do
+        if v.Name == "SyncAPI" then
+            tool = v.Parent
+        end
+    end
+    for _, v in ipairs(char:GetChildren()) do
+        if v:FindFirstChild("SyncAPI") then
+            tool = v.Parent
+        end
+    end
+    remote = tool.SyncAPI.ServerEndpoint -- this part is not mine
+
+function dorgb(Part)
+    local args = {
+    [1] = "SyncDecorate",
+    [2] = {
+        [1] = {
+            ["Color"] = Color3.new(1,0,0),
+            ["DecorationType"] = "Smoke",
+            ["Part"] = Part
+        }
+    }
+}
+
+remote:InvokeServer(unpack(args))
+wait(0.25)
+local args = {
+    [1] = "SyncDecorate",
+    [2] = {
+        [1] = {
+            ["Color"] = Color3.new(0,1,0),
+            ["DecorationType"] = "Smoke",
+            ["Part"] = Part
+        }
+    }
+}
+
+remote:InvokeServer(unpack(args))
+wait(0.25)
+local args = {
+    [1] = "SyncDecorate",
+    [2] = {
+        [1] = {
+            ["Color"] = Color3.new(0,0,1),
+            ["DecorationType"] = "Smoke",
+            ["Part"] = Part
+        }
+    }
+}
+
+remote:InvokeServer(unpack(args))
+wait(0.25)
+    end
+
+ for _, v in pairs(game.Workspace:GetChildren()) do
+ if v:IsA("BasePart") then
+     if v:FindFirstChildWhichIsA("Smoke") then
+         for i = 1,214 do
+         dorgb(v.Parent)
+         end
+         
+     end
+      elseif v:IsA("Model") then
+     for _, m in pairs(v:GetChildren()) do
+         if m:IsA("Part") and m:FindFirstChildWhichIsA("Smoke") then
+             dorgb(m)
+         end
+     end
+     
+     
+     end
+    
+    
+ end
+
+    
+
+
+
+
+end)
 
 return G2L["ScreenGui_1"], require;
