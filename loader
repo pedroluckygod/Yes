@@ -4,12 +4,14 @@ local lp = game:GetService("Players").LocalPlayer
 local rp = game:GetService("ReplicatedStorage")
 
 --locals
+local f3x = {}
 
-function getf3x()
+function f3x.getf3x()
     local tool
     for _, v in pairs(lp:GetChildren()) do
     if v.Name:find("SyncAPI") then
     tool = v.Parent
+     print("Sucess")
     end
 end
 for _, v in pairs(rp:GetChildren()) do
@@ -26,7 +28,7 @@ end
 --f3x check
 
 
-    if getf3x() ~= nil then
+    if f3x.getf3x() ~= nil then
     print("Sucess!, You Have F3X \n by @N0taExploitsLOL")
     else
     print("you dont have a f3x")    
@@ -34,7 +36,7 @@ end
 --F3X functions
 local remote = getf3x()
 
-local f3x = {}
+
 
  function f3x.new(PartType,CFrame)
      remote:InvokeServer("CreatePart",PartType,CFrame,workspace)
@@ -43,4 +45,4 @@ local f3x = {}
      remote:InvokeServer("SyncResize",{{Part = Part,CFrame = CFrame,Size = Size --[[ size is vector.create]] }})
 end
 
- return F3X
+ return f3x
