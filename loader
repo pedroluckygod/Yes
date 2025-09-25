@@ -10,12 +10,12 @@ function f3x.getf3x()
     local tool
     for _, v in pairs(lp:GetChildren()) do
     if v.Name:find("SyncAPI") then
-    tool = v.Parent
+    tool = v
     end
 end
 for _, v in pairs(rp:GetChildren()) do
 if v.Name:find("SyncAPI") then
-      tool = v.Parent
+      tool = v
    end
 end
 
