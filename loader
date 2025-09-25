@@ -11,7 +11,6 @@ function f3x.getf3x()
     for _, v in pairs(lp:GetChildren()) do
     if v.Name:find("SyncAPI") then
     tool = v.Parent
-     print("Sucess")
     end
 end
 for _, v in pairs(rp:GetChildren()) do
@@ -34,7 +33,7 @@ end
     print("you dont have a f3x")    
     end
 --F3X functions
-local remote = getf3x()
+local remote = f3x.getf3x()
 
 
 
